@@ -1,0 +1,122 @@
+{
+  "timestamp_start": "2026-08-19T02:47:41",
+  "mode": "full_yolo_pick_and_place_candidate",
+  "pipeline": "frozen_yolo_nms_lock_upper_quarter_final_v3_mapping_control",
+  "bbox_center_px": [
+    430.417,
+    163.415
+  ],
+  "grasp_point_px": [
+    430.417,
+    135.504
+  ],
+  "center_std_px": [
+    0.054,
+    0.082
+  ],
+  "triangle_ids": [
+    "P02_TOP_MID_LEFT",
+    "P03_TOP_RIGHT",
+    "P06_RIGHT_MID"
+  ],
+  "correction_mode": "three_nearest_correction",
+  "dynamic_support": [
+    {
+      "name": "mid_right_validated",
+      "distance_px": 100.7335,
+      "weight": 0.632029
+    },
+    {
+      "name": "lower_right_validated",
+      "distance_px": 163.5107,
+      "weight": 0.239879
+    },
+    {
+      "name": "upper_left_raw",
+      "distance_px": 193.781,
+      "weight": 0.128092
+    }
+  ],
+  "dynamic_hold_margin": 1.3665,
+  "dynamic_hold_cap": null,
+  "retention_policy": "default_dynamic_hold",
+  "computed_above_pose": {
+    "shoulder_pan.pos": 58.207,
+    "shoulder_lift.pos": -26.0165,
+    "elbow_flex.pos": 37.8591,
+    "wrist_flex.pos": 72.9664,
+    "wrist_roll.pos": -68.1863,
+    "gripper.pos": 73.0911
+  },
+  "computed_grasp_pose": {
+    "shoulder_pan.pos": 59.2939,
+    "shoulder_lift.pos": -16.3536,
+    "elbow_flex.pos": 46.3072,
+    "wrist_flex.pos": 59.8282,
+    "wrist_roll.pos": -66.2265,
+    "gripper.pos": 73.0911
+  },
+  "cycle_completed": true,
+  "grip_contact_accepted": true,
+  "observed_success": true,
+  "failure_reason": null,
+  "grip_requested_command": 53.4858,
+  "grip_actual_position": 61.1385,
+  "grip_hold_command": 59.772,
+  "grip_retention_checks": [
+    {
+      "stage": "post_grasp_lift",
+      "command": 59.772,
+      "actual": 61.2144,
+      "gap": 1.4424
+    },
+    {
+      "stage": "safe_rest_transfer",
+      "command": 59.772,
+      "actual": 61.2144,
+      "gap": 1.4424
+    },
+    {
+      "stage": "box_high_transfer",
+      "command": 59.772,
+      "actual": 61.2144,
+      "gap": 1.4424
+    },
+    {
+      "stage": "placement_stage_1",
+      "command": 59.772,
+      "actual": 61.2144,
+      "gap": 1.4424
+    },
+    {
+      "stage": "placement_stage_2",
+      "command": 59.772,
+      "actual": 61.2144,
+      "gap": 1.4424
+    },
+    {
+      "stage": "pre_release",
+      "command": 59.772,
+      "actual": 61.2144,
+      "gap": 1.4424
+    }
+  ],
+  "release_gripper_before": 61.2144,
+  "release_gripper_after": 71.6509,
+  "release_open_verified": true,
+  "final_robot_pose": {
+    "shoulder_pan.pos": 2.0567,
+    "shoulder_lift.pos": -87.1399,
+    "elbow_flex.pos": 29.0909,
+    "wrist_flex.pos": 85.2258,
+    "wrist_roll.pos": -69.3481,
+    "gripper.pos": 48.3112
+  },
+  "cycle_time_seconds": 134.35,
+  "timestamp_end": "2026-08-19T02:50:11",
+  "benchmark_method": "YOLO",
+  "benchmark_location_number": 4,
+  "benchmark_location_name": "L4_upper_right",
+  "benchmark_trial_number": 2,
+  "benchmark_official": true
+}

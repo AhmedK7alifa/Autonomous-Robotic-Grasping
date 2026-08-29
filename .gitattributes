@@ -1,2 +1,20 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Keep the official GNU license text byte-for-byte as downloaded.
+LICENSE -text
+
+# Preserve byte-identical experimental artifacts in Git.
+aruco/final/** -text
+yolo/final/** -text
+yolo/training/** -text
+yolo/evaluation/** -text
+calibration/camera/** -text
+mapping/final/** -text
+results/aruco/** -text
+results/yolo/** -text
+results/comparison/*.py -text
+results/comparison/*.json -text
+results/comparison/*.csv -text
+results/comparison/*.txt -text
+results/figures/*.jpg -text

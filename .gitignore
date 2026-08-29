@@ -179,3 +179,14 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+
+# Project-specific generated or raw artifacts
+*.cache
+*.avi
+*.mov
+*.mp4
+wandb/
+runs/
+yolo/training/images/
+yolo/training/labels/
+calibration/camera/charuco_images/

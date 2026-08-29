@@ -1,0 +1,129 @@
+{
+  "timestamp_start": "2026-08-17T22:51:30",
+  "mode": "final_aruco_benchmark_v3_location_1",
+  "benchmark_location": "L1_lower_left",
+  "benchmark_nominal_center_px": [
+    247.8,
+    271.0
+  ],
+  "benchmark_code_version": "V3_adaptive_retention_frozen",
+  "marker_id": 0,
+  "center_px": [
+    252.0,
+    272.25
+  ],
+  "center_std_px": [
+    0.0,
+    0.0
+  ],
+  "triangle_ids": [
+    "P04_LEFT_MID",
+    "P08_BOTTOM_CENTER",
+    "P07_BOTTOM_LEFT"
+  ],
+  "dynamic_support": [
+    {
+      "name": "lower_center_validated",
+      "distance_px": 53.0882,
+      "weight": 0.576534
+    },
+    {
+      "name": "mid_lower_validated",
+      "distance_px": 82.7742,
+      "weight": 0.237154
+    },
+    {
+      "name": "mid_left_raw",
+      "distance_px": 93.3876,
+      "weight": 0.186312
+    }
+  ],
+  "nearest_anchor_distance_px": 53.0882,
+  "dynamic_hold_margin": 1.7505,
+  "dynamic_hold_cap": null,
+  "upper_mid_support_weight": 0.0,
+  "retention_policy": "default_dynamic_hold",
+  "mapping_grasp_pose_reference_only": {
+    "shoulder_pan.pos": 45.7928,
+    "shoulder_lift.pos": 29.4707,
+    "elbow_flex.pos": -11.3493,
+    "wrist_flex.pos": 49.4746,
+    "wrist_roll.pos": -74.5431,
+    "gripper.pos": 68.0944
+  },
+  "computed_above_pose": {
+    "shoulder_pan.pos": 46.2447,
+    "shoulder_lift.pos": 28.7188,
+    "elbow_flex.pos": -21.0844,
+    "wrist_flex.pos": 54.207,
+    "wrist_roll.pos": -77.3437,
+    "gripper.pos": 72.8288
+  },
+  "computed_grasp_pose": {
+    "shoulder_pan.pos": 46.6913,
+    "shoulder_lift.pos": 38.1231,
+    "elbow_flex.pos": -23.7891,
+    "wrist_flex.pos": 54.8267,
+    "wrist_roll.pos": -76.8018,
+    "gripper.pos": 72.8288
+  },
+  "cycle_completed": true,
+  "grip_contact_accepted": true,
+  "observed_success": true,
+  "failure_reason": null,
+  "grip_requested_command": 59.4858,
+  "grip_actual_position": 66.3378,
+  "grip_hold_command": 64.5873,
+  "grip_retention_checks": [
+    {
+      "stage": "post_grasp_lift",
+      "command": 64.5873,
+      "actual": 66.3378,
+      "gap": 1.7505
+    },
+    {
+      "stage": "safe_rest_transfer",
+      "command": 64.5873,
+      "actual": 66.3378,
+      "gap": 1.7505
+    },
+    {
+      "stage": "box_high_transfer",
+      "command": 64.5873,
+      "actual": 66.3378,
+      "gap": 1.7505
+    },
+    {
+      "stage": "placement_stage_1",
+      "command": 64.5873,
+      "actual": 66.3378,
+      "gap": 1.7505
+    },
+    {
+      "stage": "placement_stage_2",
+      "command": 64.5873,
+      "actual": 66.3378,
+      "gap": 1.7505
+    },
+    {
+      "stage": "pre_release",
+      "command": 64.5873,
+      "actual": 66.3378,
+      "gap": 1.7505
+    }
+  ],
+  "release_gripper_before": 66.3378,
+  "release_gripper_after": 71.6509,
+  "release_open_verified": true,
+  "final_robot_pose": {
+    "shoulder_pan.pos": 2.0567,
+    "shoulder_lift.pos": -87.1399,
+    "elbow_flex.pos": 29.0,
+    "wrist_flex.pos": 85.3103,
+    "wrist_roll.pos": -69.1377,
+    "gripper.pos": 48.3871
+  },
+  "cycle_time_seconds": 132.82,
+  "timestamp_end": "2026-08-17T22:53:59",
+  "detection_evidence_image": "D:\\Projects\\Autonomous_Robotic_Grasping\\06_pixel_to_robot\\aruco_final_benchmark_v3\\location_1_lower_left\\aruco_trial_20260817_225359.jpg"
+}

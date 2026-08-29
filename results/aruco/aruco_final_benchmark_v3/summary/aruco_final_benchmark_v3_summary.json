@@ -1,0 +1,61 @@
+{
+  "benchmark": "Final ArUco Benchmark V3",
+  "benchmark_root": "D:\\Projects\\Autonomous_Robotic_Grasping\\06_pixel_to_robot\\aruco_final_benchmark_v3",
+  "total_trials_found": 20,
+  "grasp_successes": 20,
+  "grasp_success_rate_percent": 100.0,
+  "release_verified_successes": 20,
+  "release_verified_rate_percent": 100.0,
+  "cycle_completed": 20,
+  "cycle_completion_rate_percent": 100.0,
+  "observed_placement_successes": 20,
+  "observed_placement_success_rate_percent": 100.0,
+  "full_cycle_successes": 20,
+  "full_cycle_success_rate_percent": 100.0,
+  "cycle_time_seconds": {
+    "count": 20,
+    "mean": 133.489,
+    "median": 133.276,
+    "stdev": 0.752,
+    "min": 132.599,
+    "max": 135.402
+  },
+  "center_error_px": {
+    "count": 20,
+    "mean": 2.362,
+    "max": 5.805
+  },
+  "per_location": {
+    "L1_lower_left": {
+      "trials": 4,
+      "full_cycle_successes": 4,
+      "full_cycle_success_rate_percent": 100.0,
+      "mean_cycle_time_seconds": 132.935
+    },
+    "L2_upper_left": {
+      "trials": 4,
+      "full_cycle_successes": 4,
+      "full_cycle_success_rate_percent": 100.0,
+      "mean_cycle_time_seconds": 133.178
+    },
+    "L3_center": {
+      "trials": 4,
+      "full_cycle_successes": 4,
+      "full_cycle_success_rate_percent": 100.0,
+      "mean_cycle_time_seconds": 133.223
+    },
+    "L4_upper_right": {
+      "trials": 4,
+      "full_cycle_successes": 4,
+      "full_cycle_success_rate_percent": 100.0,
+      "mean_cycle_time_seconds": 134.719
+    },
+    "L5_lower_right": {
+      "trials": 4,
+      "full_cycle_successes": 4,
+      "full_cycle_success_rate_percent": 100.0,
+      "mean_cycle_time_seconds": 133.391
+    }
+  },
+  "failures": []
+}

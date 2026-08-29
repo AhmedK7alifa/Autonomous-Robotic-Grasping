@@ -1,0 +1,115 @@
+FINAL ARUCO-VS-YOLO CONTROLLED BENCHMARK COMPARISON
+========================================================================
+
+SCOPE AND INTEGRITY
+------------------------------------------------------------------------
+Analysis source: official final benchmark TXT, JSON, and CSV outputs only.
+ArUco: 20 trials, 5 locations, 4 repetitions per location.
+YOLO: 20 trials, 5 locations, 4 repetitions per location.
+Input integrity: PASS.
+All outcome fields and finite cycle times are present in all 40 rows.
+
+STATISTICAL DEFINITIONS
+------------------------------------------------------------------------
+The published success definitions are not textually identical:
+- ArUco: cycle_completed and observed_success.
+- YOLO: grip_contact_accepted, release_open_verified, cycle_completed, and observed_success.
+For this comparison, both methods use the stricter four-field definition. This does not change the current counts because every outcome field is true in all 40 official CSV rows.
+Cycle-time summaries use sample standard deviation (n-1).
+
+TASK PERFORMANCE
+------------------------------------------------------------------------
+Metric | ArUco | YOLO
+Grip/contact accepted | 20/20 (100.00%) | 20/20 (100.00%)
+Release verified | 20/20 (100.00%) | 20/20 (100.00%)
+Cycle completed | 20/20 (100.00%) | 20/20 (100.00%)
+Observed placement success | 20/20 (100.00%) | 20/20 (100.00%)
+Harmonized full-cycle success | 20/20 (100.00%) | 20/20 (100.00%)
+
+Both methods achieved a 100% observed full-cycle success rate within their respective 20 controlled benchmark trials. This does not establish a universal 100% success rate.
+
+CYCLE TIME
+------------------------------------------------------------------------
+ArUco: mean=133.489 s, median=133.276 s, sample SD=0.752 s, min=132.599 s, max=135.402 s
+YOLO:  mean=133.392 s, median=133.170 s, sample SD=0.623 s, min=132.722 s, max=134.551 s
+YOLO minus ArUco mean cycle time: -0.097 s (-0.073% of the ArUco mean).
+The observed difference is descriptive; no statistical speed superiority is claimed.
+Cycle-time similarity is expected because both systems share much of the same downstream mapping and robot-control pipeline.
+
+PER-LOCATION TASK PERFORMANCE
+------------------------------------------------------------------------
+Location | ArUco success / mean | YOLO success / mean | YOLO-ArUco mean
+L1_lower_left | 4/4, 132.935 s | 4/4, 132.917 s | -0.018 s
+L2_upper_left | 4/4, 133.178 s | 4/4, 133.043 s | -0.135 s
+L3_center | 4/4, 133.223 s | 4/4, 133.585 s | 0.362 s
+L4_upper_right | 4/4, 134.719 s | 4/4, 134.328 s | -0.391 s
+L5_lower_right | 4/4, 133.391 s | 4/4, 133.084 s | -0.306 s
+
+TARGET LOCALIZATION / REPEATABILITY
+------------------------------------------------------------------------
+Published summary values are not directly rankable because the nominal-center definitions differ.
+The official ArUco analyzer measures marker-center distance from stored benchmark_nominal_center_px values. The official YOLO analyzer derives a separate empirical nominal center for each location from the four official trials. These published repeatability values therefore do not share the same nominal reference definition.
+Published ArUco marker-center distance: mean=2.362 px, max=5.805 px.
+Published YOLO bbox-center distance: mean=1.485 px, max=5.026 px.
+Published YOLO upper-quarter grasp-point distance: mean=1.503 px, max=5.057 px.
+
+Harmonized descriptive comparison:
+All three coordinate types use the arithmetic mean of the four official trials at each location as their empirical nominal.
+- ArUco marker center: overall mean distance=1.269 px, overall max=3.973 px.
+- YOLO bbox center: overall mean distance=1.485 px, overall max=5.026 px.
+- YOLO upper-quarter grasp point: overall mean distance=1.503 px, overall max=5.057 px.
+Per-location harmonized mean/max distances (px):
+- L1_lower_left: ArUco=1.314/1.512, YOLO bbox=3.963/5.026, YOLO grasp=3.998/5.057
+- L2_upper_left: ArUco=0.355/0.504, YOLO bbox=0.788/0.923, YOLO grasp=0.824/0.914
+- L3_center: ArUco=0.774/1.266, YOLO bbox=1.048/1.517, YOLO grasp=1.094/1.634
+- L4_upper_right: ArUco=2.011/3.973, YOLO bbox=0.792/1.519, YOLO grasp=0.778/1.522
+- L5_lower_right: ArUco=1.892/3.065, YOLO bbox=0.834/1.544, YOLO grasp=0.820/1.544
+These repeatability results are descriptive and do not establish general statistical superiority.
+
+HELD-OUT PERCEPTION TEST PERFORMANCE - YOLO
+------------------------------------------------------------------------
+This section is separate from the 20-trial robotic benchmark.
+Ground-truth cubes: 15
+Ground-truth cubes detected: 15
+Precision: 0.916
+Recall: 1.000
+mAP50: 0.987
+mAP50-95: 0.885
+Extra background false-positive detections: 2
+False negatives: 0
+Approximate CPU processing time: 68.2 ms/image
+
+QUALITATIVE ENGINEERING COMPARISON
+------------------------------------------------------------------------
+Dimension | ArUco | YOLO
+Localization approach | Deterministic fiducial-marker localization | Learned appearance-based cube detection
+Visible marker required | Yes | No for the tested cube detector
+Detector training required | No learned detector training | Yes; labeled data and model training
+Object preparation | Marker installation and visibility required | No marker installation for the tested cube
+Extension to new object classes | Requires an appropriate visible fiducial target | Potentially possible with new labeled data, training, and validation; not established by this benchmark
+
+PAPER-READY COMPARISON TABLE
+------------------------------------------------------------------------
+Metric | ArUco | YOLO
+Official controlled trials | 20 (5 locations x 4 trials) | 20 (5 locations x 4 trials)
+Harmonized full-cycle success | 20/20 (100.00%) | 20/20 (100.00%)
+Mean cycle time | 133.489 s | 133.392 s
+Median cycle time | 133.276 s | 133.170 s
+Cycle-time sample SD | 0.752 s | 0.623 s
+Minimum cycle time | 132.599 s | 132.722 s
+Maximum cycle time | 135.402 s | 134.551 s
+Localization approach | Deterministic fiducial-marker center | Learned bbox detection plus upper-quarter grasp point
+Marker required | Yes | No for the tested cube
+Detector training required | No | Yes
+
+INTERPRETATION LIMITS
+------------------------------------------------------------------------
+Both methods achieved 100% observed full-cycle success in their respective 20 controlled benchmark trials. This is not a universal 100% success claim.
+The benchmark does not establish untested robustness or generalization to other objects, environments, or operating conditions.
+No inference about untested robustness, universal success, or statistical speed superiority is made.
+
+OUTPUTS
+------------------------------------------------------------------------
+TXT: D:\Projects\Autonomous_Robotic_Grasping\07_comparison\summary\aruco_vs_yolo_comparison.txt
+JSON: D:\Projects\Autonomous_Robotic_Grasping\07_comparison\summary\aruco_vs_yolo_comparison.json
+CSV: D:\Projects\Autonomous_Robotic_Grasping\07_comparison\summary\aruco_vs_yolo_trials.csv

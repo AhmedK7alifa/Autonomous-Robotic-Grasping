@@ -1,0 +1,15 @@
+{
+    "pose_name": "box_high_clearance_final",
+    "timestamp": "2026-08-08T16:51:26",
+    "robot_type": "SO101Follower",
+    "robot_id": "white_follower",
+    "port": "COM5",
+    "positions": {
+        "shoulder_pan.pos": -21.07,
+        "shoulder_lift.pos": 5.22,
+        "elbow_flex.pos": -37.45,
+        "wrist_flex.pos": 74.17,
+        "wrist_roll.pos": -58.31,
+        "gripper.pos": 57.12
+    }
+}

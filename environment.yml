@@ -1,0 +1,16 @@
+name: autonomous-robotic-grasping
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10.18
+  - pip
+  - pip:
+      - numpy==2.2.6
+      - opencv-contrib-python==5.0.0.93
+      - torch==2.7.1
+      - torchvision==0.22.1
+      - ultralytics==8.4.121
+      - lerobot==0.3.4
+      - feetech-servo-sdk==1.0.0
+      - pyserial==3.5
+      - PyYAML==6.0.3

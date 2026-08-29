@@ -1,0 +1,32 @@
+FINAL ARUCO BENCHMARK V3 - SUMMARY
+================================================
+Trials found: 20
+Grasp success: 20/20 (100.00%)
+Release verified: 20/20 (100.00%)
+Cycle completed: 20/20 (100.00%)
+Observed placement success: 20/20 (100.00%)
+Full-cycle success: 20/20 (100.00%)
+
+PER LOCATION
+------------------------------------------------
+L1_lower_left: 4/4 (100.00%), mean cycle time=132.935 s
+L2_upper_left: 4/4 (100.00%), mean cycle time=133.178 s
+L3_center: 4/4 (100.00%), mean cycle time=133.223 s
+L4_upper_right: 4/4 (100.00%), mean cycle time=134.719 s
+L5_lower_right: 4/4 (100.00%), mean cycle time=133.391 s
+
+CYCLE TIME
+------------------------------------------------
+Mean: 133.489 s
+Median: 133.276 s
+Std dev: 0.752 s
+Min: 132.599 s
+Max: 135.402 s
+
+TARGET CENTER REPEATABILITY
+------------------------------------------------
+Mean distance from nominal center: 2.362 px
+Maximum distance from nominal center: 5.805 px
+
+Detailed CSV: D:\Projects\Autonomous_Robotic_Grasping\06_pixel_to_robot\aruco_final_benchmark_v3\summary\aruco_final_benchmark_v3_trials.csv
+Machine-readable summary: D:\Projects\Autonomous_Robotic_Grasping\06_pixel_to_robot\aruco_final_benchmark_v3\summary\aruco_final_benchmark_v3_summary.json

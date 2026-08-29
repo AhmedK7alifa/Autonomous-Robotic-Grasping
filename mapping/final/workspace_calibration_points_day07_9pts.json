@@ -1,0 +1,278 @@
+{
+    "schema_version": 1,
+    "mapping_type": "empirical_pixel_to_joint_planar",
+    "camera": {
+        "model": "Logitech C920 Pro",
+        "index": 1,
+        "resolution": [
+            1280,
+            720
+        ],
+        "calibrated_image": true,
+        "calibration_file": "D:\\Projects\\Autonomous_Robotic_Grasping\\04_calibration\\camera_intrinsics\\camera_calibration.npz"
+    },
+    "marker": {
+        "dictionary": "DICT_4X4_50",
+        "target_id": 0
+    },
+    "robot": {
+        "type": "SO101Follower",
+        "id": "white_follower",
+        "port": "COM5"
+    },
+    "collection_rule": "The center between the gripper fingers must be manually aligned above the detected marker center at one fixed pickup height.",
+    "points": [
+        {
+            "point_id": "P01_UL",
+            "timestamp": "2026-08-08T18:08:39",
+            "marker": {
+                "dictionary": "DICT_4X4_50",
+                "id": 0,
+                "center_px": [
+                    236.0,
+                    95.75
+                ],
+                "center_std_px": [
+                    0.153,
+                    0.1
+                ],
+                "sample_count": 30,
+                "marker_size_px": 45.171,
+                "marker_angle_deg": -64.885,
+                "evidence_image": "D:\\Projects\\Autonomous_Robotic_Grasping\\06_pixel_to_robot\\calibration_images\\calibration_pixel_20260808_180755.jpg"
+            },
+            "robot_joint_positions": {
+                "shoulder_pan.pos": 76.4843,
+                "shoulder_lift.pos": 27.5992,
+                "elbow_flex.pos": -9.5455,
+                "wrist_flex.pos": 56.5217,
+                "wrist_roll.pos": -60.3575,
+                "gripper.pos": 68.1214
+            }
+        },
+        {
+            "point_id": "P02_TOP_MID_LEFT",
+            "timestamp": "2026-08-08T18:13:18",
+            "marker": {
+                "dictionary": "DICT_4X4_50",
+                "id": 0,
+                "center_px": [
+                    358.5,
+                    94.75
+                ],
+                "center_std_px": [
+                    0.0,
+                    0.0
+                ],
+                "sample_count": 30,
+                "marker_size_px": 43.892,
+                "marker_angle_deg": -72.121,
+                "evidence_image": "D:\\Projects\\Autonomous_Robotic_Grasping\\06_pixel_to_robot\\calibration_images\\calibration_pixel_20260808_181250.jpg"
+            },
+            "robot_joint_positions": {
+                "shoulder_pan.pos": 74.3112,
+                "shoulder_lift.pos": -1.9624,
+                "elbow_flex.pos": 33.4545,
+                "wrist_flex.pos": 56.2685,
+                "wrist_roll.pos": -60.3575,
+                "gripper.pos": 68.1214
+            }
+        },
+        {
+            "point_id": "P03_TOP_RIGHT",
+            "timestamp": "2026-08-08T18:23:11",
+            "marker": {
+                "dictionary": "DICT_4X4_50",
+                "id": 0,
+                "center_px": [
+                    472.0,
+                    95.25
+                ],
+                "center_std_px": [
+                    0.106,
+                    0.106
+                ],
+                "sample_count": 30,
+                "marker_size_px": 42.908,
+                "marker_angle_deg": -79.38,
+                "evidence_image": "D:\\Projects\\Autonomous_Robotic_Grasping\\06_pixel_to_robot\\calibration_images\\calibration_pixel_20260808_182221.jpg"
+            },
+            "robot_joint_positions": {
+                "shoulder_pan.pos": 70.8964,
+                "shoulder_lift.pos": -55.5741,
+                "elbow_flex.pos": 79.8182,
+                "wrist_flex.pos": 59.3921,
+                "wrist_roll.pos": -58.7802,
+                "gripper.pos": 68.1214
+            }
+        },
+        {
+            "point_id": "P04_LEFT_MID",
+            "timestamp": "2026-08-08T18:41:32",
+            "marker": {
+                "dictionary": "DICT_4X4_50",
+                "id": 0,
+                "center_px": [
+                    192.75,
+                    194.75
+                ],
+                "center_std_px": [
+                    0.0,
+                    0.045
+                ],
+                "sample_count": 30,
+                "marker_size_px": 53.029,
+                "marker_angle_deg": -63.435,
+                "evidence_image": "D:\\Projects\\Autonomous_Robotic_Grasping\\06_pixel_to_robot\\calibration_images\\calibration_pixel_20260808_184032.jpg"
+            },
+            "robot_joint_positions": {
+                "shoulder_pan.pos": 60.2639,
+                "shoulder_lift.pos": 32.1086,
+                "elbow_flex.pos": -16.5455,
+                "wrist_flex.pos": 51.1186,
+                "wrist_roll.pos": -67.245,
+                "gripper.pos": 68.1214
+            }
+        },
+        {
+            "point_id": "P05_CENTER",
+            "timestamp": "2026-08-08T18:48:34",
+            "marker": {
+                "dictionary": "DICT_4X4_50",
+                "id": 0,
+                "center_px": [
+                    325.5,
+                    199.625
+                ],
+                "center_std_px": [
+                    0.0,
+                    0.125
+                ],
+                "sample_count": 30,
+                "marker_size_px": 51.767,
+                "marker_angle_deg": -72.202,
+                "evidence_image": "D:\\Projects\\Autonomous_Robotic_Grasping\\06_pixel_to_robot\\calibration_images\\calibration_pixel_20260808_184747.jpg"
+            },
+            "robot_joint_positions": {
+                "shoulder_pan.pos": 51.9596,
+                "shoulder_lift.pos": 11.3987,
+                "elbow_flex.pos": 18.1818,
+                "wrist_flex.pos": 51.7096,
+                "wrist_roll.pos": -74.6057,
+                "gripper.pos": 68.0835
+            }
+        },
+        {
+            "point_id": "P06_RIGHT_MID",
+            "timestamp": "2026-08-08T18:51:47",
+            "marker": {
+                "dictionary": "DICT_4X4_50",
+                "id": 0,
+                "center_px": [
+                    456.25,
+                    199.5
+                ],
+                "center_std_px": [
+                    0.125,
+                    0.155
+                ],
+                "sample_count": 30,
+                "marker_size_px": 50.486,
+                "marker_angle_deg": -79.824,
+                "evidence_image": "D:\\Projects\\Autonomous_Robotic_Grasping\\06_pixel_to_robot\\calibration_images\\calibration_pixel_20260808_185109.jpg"
+            },
+            "robot_joint_positions": {
+                "shoulder_pan.pos": 38.9988,
+                "shoulder_lift.pos": -23.2568,
+                "elbow_flex.pos": 60.0909,
+                "wrist_flex.pos": 44.1114,
+                "wrist_roll.pos": -81.5983,
+                "gripper.pos": 68.0835
+            }
+        },
+        {
+            "point_id": "P07_BOTTOM_LEFT",
+            "timestamp": "2026-08-08T18:57:39",
+            "marker": {
+                "dictionary": "DICT_4X4_50",
+                "id": 0,
+                "center_px": [
+                    140.75,
+                    306.0
+                ],
+                "center_std_px": [
+                    0.093,
+                    0.0
+                ],
+                "sample_count": 30,
+                "marker_size_px": 62.274,
+                "marker_angle_deg": -66.666,
+                "evidence_image": "D:\\Projects\\Autonomous_Robotic_Grasping\\06_pixel_to_robot\\calibration_images\\calibration_pixel_20260808_185637.jpg"
+            },
+            "robot_joint_positions": {
+                "shoulder_pan.pos": 47.6135,
+                "shoulder_lift.pos": 54.405,
+                "elbow_flex.pos": -52.1818,
+                "wrist_flex.pos": 49.8523,
+                "wrist_roll.pos": -76.183,
+                "gripper.pos": 68.0835
+            }
+        },
+        {
+            "point_id": "P08_BOTTOM_CENTER",
+            "timestamp": "2026-08-08T19:01:16",
+            "marker": {
+                "dictionary": "DICT_4X4_50",
+                "id": 0,
+                "center_px": [
+                    283.5,
+                    303.25
+                ],
+                "center_std_px": [
+                    0.0,
+                    0.0
+                ],
+                "sample_count": 30,
+                "marker_size_px": 60.245,
+                "marker_angle_deg": -72.255,
+                "evidence_image": "D:\\Projects\\Autonomous_Robotic_Grasping\\06_pixel_to_robot\\calibration_images\\calibration_pixel_20260808_190033.jpg"
+            },
+            "robot_joint_positions": {
+                "shoulder_pan.pos": 39.5421,
+                "shoulder_lift.pos": 26.9311,
+                "elbow_flex.pos": -6.8182,
+                "wrist_flex.pos": 48.7547,
+                "wrist_roll.pos": -77.5499,
+                "gripper.pos": 68.0835
+            }
+        },
+        {
+            "point_id": "P09_BOTTOM_RIGHT",
+            "timestamp": "2026-08-08T19:04:40",
+            "marker": {
+                "dictionary": "DICT_4X4_50",
+                "id": 0,
+                "center_px": [
+                    437.75,
+                    300.75
+                ],
+                "center_std_px": [
+                    0.0,
+                    0.0
+                ],
+                "sample_count": 30,
+                "marker_size_px": 58.724,
+                "marker_angle_deg": -80.91,
+                "evidence_image": "D:\\Projects\\Autonomous_Robotic_Grasping\\06_pixel_to_robot\\calibration_images\\calibration_pixel_20260808_190412.jpg"
+            },
+            "robot_joint_positions": {
+                "shoulder_pan.pos": 26.8141,
+                "shoulder_lift.pos": 10.1461,
+                "elbow_flex.pos": 19.1818,
+                "wrist_flex.pos": 48.6703,
+                "wrist_roll.pos": -89.7476,
+                "gripper.pos": 68.0835
+            }
+        }
+    ]
+}

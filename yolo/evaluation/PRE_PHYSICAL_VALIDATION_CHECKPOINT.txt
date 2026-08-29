@@ -1,0 +1,121 @@
+PRE-PHYSICAL-VALIDATION CHECKPOINT
+==================================
+
+Checkpoint timestamp: 2026-08-19T00:09:51.3878522+08:00
+Project root: D:\Projects\Autonomous_Robotic_Grasping
+Hash algorithm: SHA-256
+
+CURRENT STEP STATUS
+-------------------
+12/17 complete
+Step 13 awaiting physical validation
+
+CURRENT COMPLETED PIPELINE
+--------------------------
+Frozen YOLO best.pt
+-> Logitech C920 calibrated acquisition and full-frame undistortion
+-> class-0 cube detection at confidence threshold 0.25
+-> confidence-sorted duplicate suppression at IoU >= 0.50
+-> temporal LOCK using detected bbox centers
+-> frozen global upper-quarter grasp-point rule
+-> FINAL ArUco V3 pixel-to-joint mapping
+-> FINAL dynamic source-anchor correction
+-> final source_above and source_grasp/open-grasp targets
+-> dry-run handoff of hold_margin, hold_cap, safe-rest, box-high, and
+   box-low-release inputs required by the proven FINAL V3 motion layer
+
+Completed validation status:
+- Frozen detector held-out TEST evaluation complete.
+- Five-location live YOLO detection/stability check passed.
+- Duplicate suppression verification passed at 5/5 locations.
+- Frozen grasp-point rule mapped successfully at 5/5 locations.
+- Final perception-to-mapping verification passed at 5/5 locations.
+- Controlled-grasp dry-run interface passed static safety and parity audits.
+- All 12 reusable FINAL V3 control functions were AST-identical across the
+  five canonical FINAL V3 benchmark references.
+- The controlled physical-validation result schema is prepared.
+- No physical YOLO grasp validation has been executed yet.
+
+FROZEN PERCEPTION PARAMETERS
+----------------------------
+Camera: Logitech C920, OpenCV DirectShow index 0
+Resolution: 1280x720
+Requested FPS: 30
+Preprocessing: original camera matrix, initUndistortRectifyMap + remap,
+               no crop, no resize, no flip, no rotation
+YOLO class: 0 = cube
+Confidence threshold: 0.25
+Duplicate-suppression rule: confidence-descending greedy suppression
+Duplicate-suppression IoU threshold: >= 0.50
+Temporal rolling buffer: 30 bbox centers
+Temporal minimum samples: 20
+Temporal maximum standard deviation: std_x <= 2.0 px and std_y <= 2.0 px
+
+FROZEN GRASP-POINT RULE
+-----------------------
+One global deterministic rule; no location-specific offset or exception:
+
+x_grasp = median_bbox_center_x
+y_grasp = median_bbox_top + 0.25 * median_bbox_height
+
+MAPPING VERSION
+---------------
+Reference: FINAL_ARUCO_V3_REFERENCE
+Schema version: 1
+Model type: piecewise_linear_barycentric_pixel_to_joint
+Phase: day07_final_full_workspace_9pts
+Global model: 9 calibration points and 8 validated interpolation triangles
+Extrapolation: disabled
+Correction field: FINAL V3 dynamic source-anchor correction
+Default correction mode: reliability-weighted three-nearest correction
+Special correction mode: validated mid-right/lower-right pairwise corridor
+Retention policy: FINAL V3 upper-mid adaptive and right-pairwise policies
+
+FROZEN CORE FILE HASHES
+-----------------------
+32C32FCEF42B92A5ED3FD37F0023281251FBE50D94342AF65AD6614592BFF7C6  06_yolo/runs/cube_yolo26n_run1/weights/best.pt
+2F696707F6A51075BDEF8D796E88F0C02AF32EEF221EB936ED705FCF098E86CC  06_yolo/03_live_cube_detection.py
+408461C46A349C41700269E230F18E002BE5B8ED9B91DFBD5245C04101B6D109  06_yolo/06_yolo_final_perception_mapping.py
+0C664C5B6F2E7ECCF0EA04CC618E9147AC10DA50EF1C0F95C8CABC4DA969837F  06_yolo/07_yolo_controlled_grasp_dry_run.py
+15ECE2CD9690CB40ABFA8FB4748202473205A64D0C3D07524D73DD54046B028C  06_yolo/08_controlled_grasp_validation_result_schema.json
+834DBC0CCA8AA04704FD12EE3A9E487A8B6421997C2295EC7998F2866F18588F  06_pixel_to_robot/FINAL_ARUCO_V3_REFERENCE/pixel_to_joint_model_day07.json
+
+FINAL DYNAMIC SOURCE-ANCHOR POSE HASHES
+---------------------------------------
+upper_left_raw:
+769A1C2F00A7A1BE15EB5E44EB32457BDB1F3869F41656BC78CF53DCCC49D152  03_robot_control/poses/upper_left_above_cube_v1.json
+78DD256813DBAE2023C02F9162346CF0BAC7835193C9FC984B2455ABDBC6B050  03_robot_control/poses/upper_left_grasp_v2.json
+
+upper_mid_validated:
+D1542AD915A45FB8BF37780A238650282F28F8CB13053171560F8EA70F14C922  03_robot_control/poses/upper_mid_interp_above_v1.json
+41B7390F414C45366ECBA77373FD92D969FFCCCAB2227E31D7731AEAB47522EC  03_robot_control/poses/upper_mid_interp_grasp_v1.json
+
+mid_left_raw:
+FDFC683E4F72C79DA91FC1693D6D6A63A93CB7E0C6F5CBBEFECD2C9490791041  03_robot_control/poses/mid_left_above_cube_v2.json
+866583190BEB089298C7516B98EF6DBC7835CBE93A6EF2B5B334734668807239  03_robot_control/poses/mid_left_grasp_v2.json
+
+mid_right_validated:
+95753E2524051BAB1414C4ED25B7D20DCBBB9E983391762B219F69F3138B5406  03_robot_control/poses/mid_right_above_cube_v1.json
+6ECC9724DA7156CC0BC3507B3F89495D29E17E812665B5F2CBC4826ADA6732D7  03_robot_control/poses/mid_right_grasp_v1.json
+
+mid_lower_validated:
+C55F6F2D6CB306A82F6699A80ABC8AB41DB88D0050A845644AA872F95A027630  03_robot_control/poses/left_interp_above_v1.json
+DD2036A32DC8E281D9D3AE6E547040A4C5BED227AC0E3AA654543F08C32430B3  03_robot_control/poses/left_interp_grasp_v1.json
+
+lower_left_raw:
+EC7E9D22AC60811889A81FB34E7849D80D178C9D920D53757F7B7409DFE0D9AA  03_robot_control/poses/lower_left_above_cube_v2.json
+DC4C7B312EB4043E4DFBCA795850E947DF2806B3A6279D7EACB36076EA436720  03_robot_control/poses/lower_left_grasp_v3.json
+
+lower_center_validated:
+F69CCF1E93B1C7C7EEDF065F47D3A82493100B2220D6A44260FF5AD6E2971B0D  03_robot_control/poses/lower_center_above_cube_v1.json
+3C7AB3E71CE0E45B2DFE0E27D76E02CB8ED24216B0C7702ECDD0BD8B579F32C5  03_robot_control/poses/lower_center_grasp_v1.json
+
+lower_right_validated:
+986998F5F7083CE9FAC3BF0293469B33DD968B51D91229905D5676F6368B49C1  03_robot_control/poses/lower_right_above_cube_v1.json
+F5961BB1B4E1A076E6E5E1344979AC563F0FC7EE365F5381FC8372E24254B4BC  03_robot_control/poses/lower_right_grasp_v1.json
+
+CHECKPOINT NOTE
+---------------
+This checkpoint records the software state immediately before the first
+controlled physical YOLO grasp validation. A later integrity audit should
+recompute every hash above and require an exact match before hardware use.

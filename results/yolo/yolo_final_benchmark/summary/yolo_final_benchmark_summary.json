@@ -1,0 +1,440 @@
+{
+  "benchmark": {
+    "name": "Final YOLO Benchmark",
+    "method": "YOLO",
+    "design": "5 locations x 4 trials = 20 controlled trials",
+    "benchmark_root": "D:\\Projects\\Autonomous_Robotic_Grasping\\06_yolo\\yolo_final_benchmark",
+    "analyzed_input_folders": [
+      "D:\\Projects\\Autonomous_Robotic_Grasping\\06_yolo\\yolo_final_benchmark\\location_1_lower_left",
+      "D:\\Projects\\Autonomous_Robotic_Grasping\\06_yolo\\yolo_final_benchmark\\location_2_upper_left",
+      "D:\\Projects\\Autonomous_Robotic_Grasping\\06_yolo\\yolo_final_benchmark\\location_3_center",
+      "D:\\Projects\\Autonomous_Robotic_Grasping\\06_yolo\\yolo_final_benchmark\\location_4_upper_right",
+      "D:\\Projects\\Autonomous_Robotic_Grasping\\06_yolo\\yolo_final_benchmark\\location_5_lower_right"
+    ],
+    "files_analyzed": 20,
+    "development_and_debug_trials_excluded": true,
+    "full_cycle_success_definition": "grip_contact_accepted, release_open_verified, cycle_completed, and observed_success must all be true",
+    "standard_deviation_convention": "Sample standard deviation (statistics.stdev, n-1), matching the existing final ArUco analyzer."
+  },
+  "integrity": {
+    "passed": true,
+    "expected_total_trials": 20,
+    "files_parsed": 20,
+    "expected_trials_per_location": 4,
+    "files_per_location": {
+      "L1_lower_left": 4,
+      "L2_upper_left": 4,
+      "L3_center": 4,
+      "L4_upper_right": 4,
+      "L5_lower_right": 4
+    },
+    "duplicate_payload_groups": 0,
+    "duplicate_start_timestamp_groups": 0,
+    "field_availability": {
+      "grip_contact_accepted": 20,
+      "release_open_verified": 20,
+      "cycle_completed": 20,
+      "observed_success": 20,
+      "cycle_time_seconds": 20,
+      "bbox_center_px": 20,
+      "grasp_point_px": 20,
+      "triangle_ids": 20,
+      "correction_mode": 20,
+      "dynamic_hold_margin": 20,
+      "dynamic_hold_cap": 20,
+      "retention_policy": 20
+    },
+    "issues": []
+  },
+  "total_counts": {
+    "total_trials": 20,
+    "grip_contact_accepted": {
+      "count": 20,
+      "percentage": 100.0,
+      "available_records": 20
+    },
+    "release_verified": {
+      "count": 20,
+      "percentage": 100.0,
+      "available_records": 20
+    },
+    "cycle_completed": {
+      "count": 20,
+      "percentage": 100.0,
+      "available_records": 20
+    },
+    "observed_placement_success": {
+      "count": 20,
+      "percentage": 100.0,
+      "available_records": 20
+    },
+    "full_cycle_success": {
+      "count": 20,
+      "percentage": 100.0
+    }
+  },
+  "per_location": {
+    "L1_lower_left": {
+      "location_number": 1,
+      "input_folder": "D:\\Projects\\Autonomous_Robotic_Grasping\\06_yolo\\yolo_final_benchmark\\location_1_lower_left",
+      "trials": 4,
+      "successful_full_cycles": 4,
+      "success_percentage": 100.0,
+      "cycle_time_seconds": {
+        "count": 4,
+        "mean": 132.917,
+        "median": 132.866,
+        "sample_stdev": 0.146,
+        "min": 132.807,
+        "max": 133.131
+      },
+      "bbox_center_repeatability": {
+        "available": true,
+        "coordinate_count": 4,
+        "nominal_center_px": [
+          253.952,
+          299.728
+        ],
+        "mean_distance_px": 3.963,
+        "max_distance_px": 5.026
+      },
+      "grasp_point_repeatability": {
+        "available": true,
+        "coordinate_count": 4,
+        "nominal_center_px": [
+          253.952,
+          266.849
+        ],
+        "mean_distance_px": 3.998,
+        "max_distance_px": 5.057
+      }
+    },
+    "L2_upper_left": {
+      "location_number": 2,
+      "input_folder": "D:\\Projects\\Autonomous_Robotic_Grasping\\06_yolo\\yolo_final_benchmark\\location_2_upper_left",
+      "trials": 4,
+      "successful_full_cycles": 4,
+      "success_percentage": 100.0,
+      "cycle_time_seconds": {
+        "count": 4,
+        "mean": 133.043,
+        "median": 133.112,
+        "sample_stdev": 0.206,
+        "min": 132.744,
+        "max": 133.205
+      },
+      "bbox_center_repeatability": {
+        "available": true,
+        "coordinate_count": 4,
+        "nominal_center_px": [
+          238.221,
+          162.25
+        ],
+        "mean_distance_px": 0.788,
+        "max_distance_px": 0.923
+      },
+      "grasp_point_repeatability": {
+        "available": true,
+        "coordinate_count": 4,
+        "nominal_center_px": [
+          238.221,
+          133.613
+        ],
+        "mean_distance_px": 0.824,
+        "max_distance_px": 0.914
+      }
+    },
+    "L3_center": {
+      "location_number": 3,
+      "input_folder": "D:\\Projects\\Autonomous_Robotic_Grasping\\06_yolo\\yolo_final_benchmark\\location_3_center",
+      "trials": 4,
+      "successful_full_cycles": 4,
+      "success_percentage": 100.0,
+      "cycle_time_seconds": {
+        "count": 4,
+        "mean": 133.585,
+        "median": 133.407,
+        "sample_stdev": 0.516,
+        "min": 133.198,
+        "max": 134.329
+      },
+      "bbox_center_repeatability": {
+        "available": true,
+        "coordinate_count": 4,
+        "nominal_center_px": [
+          323.857,
+          220.517
+        ],
+        "mean_distance_px": 1.048,
+        "max_distance_px": 1.517
+      },
+      "grasp_point_repeatability": {
+        "available": true,
+        "coordinate_count": 4,
+        "nominal_center_px": [
+          323.857,
+          190.043
+        ],
+        "mean_distance_px": 1.094,
+        "max_distance_px": 1.634
+      }
+    },
+    "L4_upper_right": {
+      "location_number": 4,
+      "input_folder": "D:\\Projects\\Autonomous_Robotic_Grasping\\06_yolo\\yolo_final_benchmark\\location_4_upper_right",
+      "trials": 4,
+      "successful_full_cycles": 4,
+      "success_percentage": 100.0,
+      "cycle_time_seconds": {
+        "count": 4,
+        "mean": 134.328,
+        "median": 134.404,
+        "sample_stdev": 0.264,
+        "min": 133.951,
+        "max": 134.551
+      },
+      "bbox_center_repeatability": {
+        "available": true,
+        "coordinate_count": 4,
+        "nominal_center_px": [
+          430.393,
+          163.691
+        ],
+        "mean_distance_px": 0.792,
+        "max_distance_px": 1.519
+      },
+      "grasp_point_repeatability": {
+        "available": true,
+        "coordinate_count": 4,
+        "nominal_center_px": [
+          430.393,
+          135.684
+        ],
+        "mean_distance_px": 0.778,
+        "max_distance_px": 1.522
+      }
+    },
+    "L5_lower_right": {
+      "location_number": 5,
+      "input_folder": "D:\\Projects\\Autonomous_Robotic_Grasping\\06_yolo\\yolo_final_benchmark\\location_5_lower_right",
+      "trials": 4,
+      "successful_full_cycles": 4,
+      "success_percentage": 100.0,
+      "cycle_time_seconds": {
+        "count": 4,
+        "mean": 133.084,
+        "median": 132.892,
+        "sample_stdev": 0.505,
+        "min": 132.722,
+        "max": 133.831
+      },
+      "bbox_center_repeatability": {
+        "available": true,
+        "coordinate_count": 4,
+        "nominal_center_px": [
+          408.2,
+          316.289
+        ],
+        "mean_distance_px": 0.834,
+        "max_distance_px": 1.544
+      },
+      "grasp_point_repeatability": {
+        "available": true,
+        "coordinate_count": 4,
+        "nominal_center_px": [
+          408.2,
+          282.416
+        ],
+        "mean_distance_px": 0.82,
+        "max_distance_px": 1.544
+      }
+    }
+  },
+  "overall_cycle_time_seconds": {
+    "count": 20,
+    "mean": 133.392,
+    "median": 133.17,
+    "sample_stdev": 0.623,
+    "min": 132.722,
+    "max": 134.551
+  },
+  "perception_repeatability": {
+    "bbox_center_px": {
+      "available": true,
+      "coordinate_field": "bbox_center_px",
+      "nominal_method": "Per-location arithmetic mean of the four official trial coordinates; Euclidean pixel distance from that empirical nominal center.",
+      "available_locations": 5,
+      "overall": {
+        "count": 20,
+        "mean_distance_px": 1.485,
+        "max_distance_px": 5.026
+      },
+      "per_location": {
+        "L1_lower_left": {
+          "available": true,
+          "coordinate_count": 4,
+          "nominal_center_px": [
+            253.952,
+            299.728
+          ],
+          "mean_distance_px": 3.963,
+          "max_distance_px": 5.026
+        },
+        "L2_upper_left": {
+          "available": true,
+          "coordinate_count": 4,
+          "nominal_center_px": [
+            238.221,
+            162.25
+          ],
+          "mean_distance_px": 0.788,
+          "max_distance_px": 0.923
+        },
+        "L3_center": {
+          "available": true,
+          "coordinate_count": 4,
+          "nominal_center_px": [
+            323.857,
+            220.517
+          ],
+          "mean_distance_px": 1.048,
+          "max_distance_px": 1.517
+        },
+        "L4_upper_right": {
+          "available": true,
+          "coordinate_count": 4,
+          "nominal_center_px": [
+            430.393,
+            163.691
+          ],
+          "mean_distance_px": 0.792,
+          "max_distance_px": 1.519
+        },
+        "L5_lower_right": {
+          "available": true,
+          "coordinate_count": 4,
+          "nominal_center_px": [
+            408.2,
+            316.289
+          ],
+          "mean_distance_px": 0.834,
+          "max_distance_px": 1.544
+        }
+      }
+    },
+    "grasp_point_px": {
+      "available": true,
+      "coordinate_field": "grasp_point_px",
+      "nominal_method": "Per-location arithmetic mean of the four official trial coordinates; Euclidean pixel distance from that empirical nominal center.",
+      "available_locations": 5,
+      "overall": {
+        "count": 20,
+        "mean_distance_px": 1.503,
+        "max_distance_px": 5.057
+      },
+      "per_location": {
+        "L1_lower_left": {
+          "available": true,
+          "coordinate_count": 4,
+          "nominal_center_px": [
+            253.952,
+            266.849
+          ],
+          "mean_distance_px": 3.998,
+          "max_distance_px": 5.057
+        },
+        "L2_upper_left": {
+          "available": true,
+          "coordinate_count": 4,
+          "nominal_center_px": [
+            238.221,
+            133.613
+          ],
+          "mean_distance_px": 0.824,
+          "max_distance_px": 0.914
+        },
+        "L3_center": {
+          "available": true,
+          "coordinate_count": 4,
+          "nominal_center_px": [
+            323.857,
+            190.043
+          ],
+          "mean_distance_px": 1.094,
+          "max_distance_px": 1.634
+        },
+        "L4_upper_right": {
+          "available": true,
+          "coordinate_count": 4,
+          "nominal_center_px": [
+            430.393,
+            135.684
+          ],
+          "mean_distance_px": 0.778,
+          "max_distance_px": 1.522
+        },
+        "L5_lower_right": {
+          "available": true,
+          "coordinate_count": 4,
+          "nominal_center_px": [
+            408.2,
+            282.416
+          ],
+          "mean_distance_px": 0.82,
+          "max_distance_px": 1.544
+        }
+      }
+    }
+  },
+  "supplementary": {
+    "mapping_triangle_usage": {
+      "P01_UL / P02_TOP_MID_LEFT / P05_CENTER": 4,
+      "P01_UL / P05_CENTER / P04_LEFT_MID": 4,
+      "P02_TOP_MID_LEFT / P03_TOP_RIGHT / P06_RIGHT_MID": 4,
+      "P04_LEFT_MID / P05_CENTER / P08_BOTTOM_CENTER": 2,
+      "P04_LEFT_MID / P08_BOTTOM_CENTER / P07_BOTTOM_LEFT": 2,
+      "P05_CENTER / P09_BOTTOM_RIGHT / P08_BOTTOM_CENTER": 4
+    },
+    "correction_mode_usage": {
+      "right_pairwise_linear": 4,
+      "three_nearest_correction": 16
+    },
+    "retention_policy_usage": {
+      "default_dynamic_hold": 12,
+      "right_pairwise_hold_cap": 4,
+      "upper_mid_adaptive_stronger_hold": 4
+    },
+    "dynamic_hold_margin": {
+      "count": 20,
+      "mean": 1.822,
+      "median": 1.367,
+      "sample_stdev": 0.885,
+      "min": 1.2,
+      "max": 3.5
+    },
+    "dynamic_hold_cap_usage": {
+      "62.5": 4,
+      "63.0": 4,
+      "null": 12
+    }
+  },
+  "field_availability": {
+    "available_counts": {
+      "grip_contact_accepted": 20,
+      "release_open_verified": 20,
+      "cycle_completed": 20,
+      "observed_success": 20,
+      "cycle_time_seconds": 20,
+      "bbox_center_px": 20,
+      "grasp_point_px": 20,
+      "triangle_ids": 20,
+      "correction_mode": 20,
+      "dynamic_hold_margin": 20,
+      "dynamic_hold_cap": 20,
+      "retention_policy": 20
+    },
+    "unavailable_fields": [],
+    "partially_unavailable_fields": {}
+  },
+  "failures": []
+}

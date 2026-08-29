@@ -1,0 +1,15 @@
+{
+    "pose_name": "safe_rest_final_workspace",
+    "timestamp": "2026-08-03T17:26:59",
+    "robot_type": "SO101Follower",
+    "robot_id": "white_follower",
+    "port": "COM5",
+    "positions": {
+        "shoulder_pan.pos": 2.6,
+        "shoulder_lift.pos": -87.14,
+        "elbow_flex.pos": 29.0,
+        "wrist_flex.pos": 85.39,
+        "wrist_roll.pos": -69.4,
+        "gripper.pos": 47.97
+    }
+}

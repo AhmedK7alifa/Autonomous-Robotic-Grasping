@@ -1,0 +1,102 @@
+FINAL YOLO BENCHMARK - OFFICIAL SUMMARY
+============================================================
+
+BENCHMARK SCOPE
+------------------------------------------------------------
+Design: 5 locations x 4 trials = 20 controlled trials
+Official JSON files analyzed: 20
+Development/debug trials, dry runs, perception validations, dataset results, and all non-official JSON files were excluded.
+Analyzed input folders:
+- D:\Projects\Autonomous_Robotic_Grasping\06_yolo\yolo_final_benchmark\location_1_lower_left
+- D:\Projects\Autonomous_Robotic_Grasping\06_yolo\yolo_final_benchmark\location_2_upper_left
+- D:\Projects\Autonomous_Robotic_Grasping\06_yolo\yolo_final_benchmark\location_3_center
+- D:\Projects\Autonomous_Robotic_Grasping\06_yolo\yolo_final_benchmark\location_4_upper_right
+- D:\Projects\Autonomous_Robotic_Grasping\06_yolo\yolo_final_benchmark\location_5_lower_right
+
+INTEGRITY
+------------------------------------------------------------
+Integrity result: PASS
+Records parsed: 20/20
+Files per location: L1_lower_left=4, L2_upper_left=4, L3_center=4, L4_upper_right=4, L5_lower_right=4
+Duplicate underlying trial payloads: 0
+Duplicate trial start timestamps: 0
+Malformed records or benchmark-metadata inconsistencies: 0
+
+SUCCESS DEFINITION AND STATISTICAL CONVENTION
+------------------------------------------------------------
+Full-cycle success requires grip_contact_accepted, release_open_verified, cycle_completed, and observed_success to all be true.
+Cycle-time standard deviations are sample standard deviations (n-1), matching the existing final ArUco analyzer.
+
+TOTAL COUNTS
+------------------------------------------------------------
+Grip/contact accepted: 20/20 (100.00%)
+Release verified: 20/20 (100.00%)
+Cycle completed: 20/20 (100.00%)
+Observed placement success: 20/20 (100.00%)
+Full-cycle success: 20/20 (100.00%)
+
+The YOLO-based system achieved a 100% observed full-cycle success rate across 20 controlled benchmark trials distributed over five workspace locations.
+
+PER-LOCATION RESULTS
+------------------------------------------------------------
+L1_lower_left: 4/4 (100.00%); n=4, mean=132.917 s, median=132.866 s, sample SD=0.146 s, min=132.807 s, max=133.131 s
+L2_upper_left: 4/4 (100.00%); n=4, mean=133.043 s, median=133.112 s, sample SD=0.206 s, min=132.744 s, max=133.205 s
+L3_center: 4/4 (100.00%); n=4, mean=133.585 s, median=133.407 s, sample SD=0.516 s, min=133.198 s, max=134.329 s
+L4_upper_right: 4/4 (100.00%); n=4, mean=134.328 s, median=134.404 s, sample SD=0.264 s, min=133.951 s, max=134.551 s
+L5_lower_right: 4/4 (100.00%); n=4, mean=133.084 s, median=132.892 s, sample SD=0.505 s, min=132.722 s, max=133.831 s
+
+OVERALL CYCLE TIME
+------------------------------------------------------------
+n=20, mean=133.392 s, median=133.17 s, sample SD=0.623 s, min=132.722 s, max=134.551 s
+
+PERCEPTION / TARGET REPEATABILITY
+------------------------------------------------------------
+Method: for each location, the empirical nominal point is the arithmetic mean of the four official trial coordinates; distances are Euclidean pixel distances from that point.
+
+YOLO bbox center:
+- Overall mean distance from nominal: 1.485 px
+- Overall maximum distance from nominal: 5.026 px
+- L1_lower_left: nominal=[253.952, 299.728] px, mean distance=3.963 px, max distance=5.026 px
+- L2_upper_left: nominal=[238.221, 162.25] px, mean distance=0.788 px, max distance=0.923 px
+- L3_center: nominal=[323.857, 220.517] px, mean distance=1.048 px, max distance=1.517 px
+- L4_upper_right: nominal=[430.393, 163.691] px, mean distance=0.792 px, max distance=1.519 px
+- L5_lower_right: nominal=[408.2, 316.289] px, mean distance=0.834 px, max distance=1.544 px
+
+Final grasp point:
+- Overall mean distance from nominal: 1.503 px
+- Overall maximum distance from nominal: 5.057 px
+- L1_lower_left: nominal=[253.952, 266.849] px, mean distance=3.998 px, max distance=5.057 px
+- L2_upper_left: nominal=[238.221, 133.613] px, mean distance=0.824 px, max distance=0.914 px
+- L3_center: nominal=[323.857, 190.043] px, mean distance=1.094 px, max distance=1.634 px
+- L4_upper_right: nominal=[430.393, 135.684] px, mean distance=0.778 px, max distance=1.522 px
+- L5_lower_right: nominal=[408.2, 282.416] px, mean distance=0.82 px, max distance=1.544 px
+
+SUPPLEMENTARY YOLO-SPECIFIC STATISTICS
+------------------------------------------------------------
+Mapping triangle usage:
+- P01_UL / P02_TOP_MID_LEFT / P05_CENTER: 4
+- P01_UL / P05_CENTER / P04_LEFT_MID: 4
+- P02_TOP_MID_LEFT / P03_TOP_RIGHT / P06_RIGHT_MID: 4
+- P04_LEFT_MID / P05_CENTER / P08_BOTTOM_CENTER: 2
+- P04_LEFT_MID / P08_BOTTOM_CENTER / P07_BOTTOM_LEFT: 2
+- P05_CENTER / P09_BOTTOM_RIGHT / P08_BOTTOM_CENTER: 4
+Correction mode usage:
+- right_pairwise_linear: 4
+- three_nearest_correction: 16
+Retention policy usage:
+- default_dynamic_hold: 12
+- right_pairwise_hold_cap: 4
+- upper_mid_adaptive_stronger_hold: 4
+Dynamic hold margin: n=20, mean=1.822, median=1.367, sample SD=0.885, min=1.2, max=3.5
+Dynamic hold-cap value usage: 62.5=4, 63.0=4, null=12
+
+UNAVAILABLE FIELDS
+------------------------------------------------------------
+Completely unavailable fields: None
+Partially unavailable fields: None
+
+OUTPUT FILES
+------------------------------------------------------------
+TXT: D:\Projects\Autonomous_Robotic_Grasping\06_yolo\yolo_final_benchmark\summary\yolo_final_benchmark_summary.txt
+JSON: D:\Projects\Autonomous_Robotic_Grasping\06_yolo\yolo_final_benchmark\summary\yolo_final_benchmark_summary.json
+CSV: D:\Projects\Autonomous_Robotic_Grasping\06_yolo\yolo_final_benchmark\summary\yolo_final_benchmark_trials.csv

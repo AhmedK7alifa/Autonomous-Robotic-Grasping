@@ -1,0 +1,15 @@
+{
+    "pose_name": "mid_right_grasp_v1",
+    "timestamp": "2026-08-16T01:24:06",
+    "robot_type": "SO101Follower",
+    "robot_id": "white_follower",
+    "port": "COM5",
+    "positions": {
+        "shoulder_pan.pos": 49.48,
+        "shoulder_lift.pos": 13.99,
+        "elbow_flex.pos": 18.82,
+        "wrist_flex.pos": 53.9,
+        "wrist_roll.pos": -73.66,
+        "gripper.pos": 73.55
+    }
+}

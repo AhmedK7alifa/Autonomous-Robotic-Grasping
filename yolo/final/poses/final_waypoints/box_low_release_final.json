@@ -1,0 +1,15 @@
+{
+    "pose_name": "box_low_release_final",
+    "timestamp": "2026-08-08T16:58:19",
+    "robot_type": "SO101Follower",
+    "robot_id": "white_follower",
+    "port": "COM5",
+    "positions": {
+        "shoulder_pan.pos": -22.16,
+        "shoulder_lift.pos": 35.2,
+        "elbow_flex.pos": -26.45,
+        "wrist_flex.pos": 71.21,
+        "wrist_roll.pos": -69.61,
+        "gripper.pos": 62.54
+    }
+}

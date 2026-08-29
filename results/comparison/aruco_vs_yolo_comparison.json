@@ -1,0 +1,489 @@
+{
+  "comparison": {
+    "title": "Final ArUco-vs-YOLO Controlled Benchmark Comparison",
+    "analysis_only": true,
+    "source_scope": "Official final benchmark analysis outputs only",
+    "official_inputs": [
+      "D:\\Projects\\Autonomous_Robotic_Grasping\\06_pixel_to_robot\\aruco_final_benchmark_v3\\summary\\aruco_final_benchmark_v3_summary.txt",
+      "D:\\Projects\\Autonomous_Robotic_Grasping\\06_pixel_to_robot\\aruco_final_benchmark_v3\\summary\\aruco_final_benchmark_v3_summary.json",
+      "D:\\Projects\\Autonomous_Robotic_Grasping\\06_pixel_to_robot\\aruco_final_benchmark_v3\\summary\\aruco_final_benchmark_v3_trials.csv",
+      "D:\\Projects\\Autonomous_Robotic_Grasping\\06_yolo\\yolo_final_benchmark\\summary\\yolo_final_benchmark_summary.txt",
+      "D:\\Projects\\Autonomous_Robotic_Grasping\\06_yolo\\yolo_final_benchmark\\summary\\yolo_final_benchmark_summary.json",
+      "D:\\Projects\\Autonomous_Robotic_Grasping\\06_yolo\\yolo_final_benchmark\\summary\\yolo_final_benchmark_trials.csv"
+    ]
+  },
+  "integrity": {
+    "passed": true,
+    "expected_trials_per_method": 20,
+    "expected_locations": 5,
+    "expected_repetitions_per_location": 4,
+    "aruco_trials": 20,
+    "yolo_trials": 20,
+    "aruco_files_per_location": {
+      "L1_lower_left": 4,
+      "L2_upper_left": 4,
+      "L3_center": 4,
+      "L4_upper_right": 4,
+      "L5_lower_right": 4
+    },
+    "yolo_files_per_location": {
+      "L1_lower_left": 4,
+      "L2_upper_left": 4,
+      "L3_center": 4,
+      "L4_upper_right": 4,
+      "L5_lower_right": 4
+    },
+    "outcome_fields_available_for_both_methods": [
+      "grip_contact_accepted",
+      "release_open_verified",
+      "cycle_completed",
+      "observed_success"
+    ],
+    "success_definition_compatibility": {
+      "published_aruco_definition": "cycle_completed and observed_success",
+      "published_yolo_definition": "grip_contact_accepted, release_open_verified, cycle_completed, and observed_success",
+      "definitions_identical": false,
+      "harmonized_definition": "All four outcome fields must be true for both methods.",
+      "effect_on_current_counts": "None; all four outcome fields are true in all 40 official CSV rows."
+    },
+    "cycle_time_compatibility": {
+      "sample_standard_deviation_used_by_both": true,
+      "all_trials_completed": true,
+      "all_cycle_times_finite": true,
+      "effective_analyzed_trial_sets_compatible": true
+    },
+    "issues": []
+  },
+  "benchmark_design": {
+    "ArUco": {
+      "trials": 20,
+      "locations": 5,
+      "repetitions": 4
+    },
+    "YOLO": {
+      "trials": 20,
+      "locations": 5,
+      "repetitions": 4
+    }
+  },
+  "task_performance": {
+    "harmonized_success_definition": "All four outcome fields must be true.",
+    "ArUco": {
+      "total_trials": 20,
+      "grip_contact_accepted": {
+        "count": 20,
+        "percentage": 100.0
+      },
+      "release_open_verified": {
+        "count": 20,
+        "percentage": 100.0
+      },
+      "cycle_completed": {
+        "count": 20,
+        "percentage": 100.0
+      },
+      "observed_success": {
+        "count": 20,
+        "percentage": 100.0
+      },
+      "harmonized_full_cycle_success": {
+        "count": 20,
+        "percentage": 100.0
+      }
+    },
+    "YOLO": {
+      "total_trials": 20,
+      "grip_contact_accepted": {
+        "count": 20,
+        "percentage": 100.0
+      },
+      "release_open_verified": {
+        "count": 20,
+        "percentage": 100.0
+      },
+      "cycle_completed": {
+        "count": 20,
+        "percentage": 100.0
+      },
+      "observed_success": {
+        "count": 20,
+        "percentage": 100.0
+      },
+      "harmonized_full_cycle_success": {
+        "count": 20,
+        "percentage": 100.0
+      }
+    }
+  },
+  "cycle_time_seconds": {
+    "standard_deviation_convention": "Sample standard deviation (n-1)",
+    "ArUco": {
+      "count": 20,
+      "mean": 133.489,
+      "median": 133.276,
+      "sample_stdev": 0.752,
+      "min": 132.599,
+      "max": 135.402
+    },
+    "YOLO": {
+      "count": 20,
+      "mean": 133.392,
+      "median": 133.17,
+      "sample_stdev": 0.623,
+      "min": 132.722,
+      "max": 134.551
+    },
+    "yolo_minus_aruco_mean_seconds": -0.097,
+    "relative_mean_difference_percent_of_aruco": -0.073,
+    "interpretation": "The observed mean difference is descriptive. No claim of statistical speed superiority is made."
+  },
+  "per_location": {
+    "L1_lower_left": {
+      "aruco": {
+        "trials": 4,
+        "full_cycle_successes": 4,
+        "success_percentage": 100.0,
+        "mean_cycle_time_seconds": 132.935
+      },
+      "yolo": {
+        "trials": 4,
+        "full_cycle_successes": 4,
+        "success_percentage": 100.0,
+        "mean_cycle_time_seconds": 132.917
+      },
+      "yolo_minus_aruco_mean_cycle_time_seconds": -0.018
+    },
+    "L2_upper_left": {
+      "aruco": {
+        "trials": 4,
+        "full_cycle_successes": 4,
+        "success_percentage": 100.0,
+        "mean_cycle_time_seconds": 133.178
+      },
+      "yolo": {
+        "trials": 4,
+        "full_cycle_successes": 4,
+        "success_percentage": 100.0,
+        "mean_cycle_time_seconds": 133.043
+      },
+      "yolo_minus_aruco_mean_cycle_time_seconds": -0.135
+    },
+    "L3_center": {
+      "aruco": {
+        "trials": 4,
+        "full_cycle_successes": 4,
+        "success_percentage": 100.0,
+        "mean_cycle_time_seconds": 133.223
+      },
+      "yolo": {
+        "trials": 4,
+        "full_cycle_successes": 4,
+        "success_percentage": 100.0,
+        "mean_cycle_time_seconds": 133.585
+      },
+      "yolo_minus_aruco_mean_cycle_time_seconds": 0.362
+    },
+    "L4_upper_right": {
+      "aruco": {
+        "trials": 4,
+        "full_cycle_successes": 4,
+        "success_percentage": 100.0,
+        "mean_cycle_time_seconds": 134.719
+      },
+      "yolo": {
+        "trials": 4,
+        "full_cycle_successes": 4,
+        "success_percentage": 100.0,
+        "mean_cycle_time_seconds": 134.328
+      },
+      "yolo_minus_aruco_mean_cycle_time_seconds": -0.391
+    },
+    "L5_lower_right": {
+      "aruco": {
+        "trials": 4,
+        "full_cycle_successes": 4,
+        "success_percentage": 100.0,
+        "mean_cycle_time_seconds": 133.391
+      },
+      "yolo": {
+        "trials": 4,
+        "full_cycle_successes": 4,
+        "success_percentage": 100.0,
+        "mean_cycle_time_seconds": 133.084
+      },
+      "yolo_minus_aruco_mean_cycle_time_seconds": -0.306
+    }
+  },
+  "target_localization_repeatability": {
+    "published_metrics": {
+      "direct_ranking_permitted": false,
+      "methodological_difference": "The official ArUco analyzer measures marker-center distance from stored benchmark_nominal_center_px values. The official YOLO analyzer derives a separate empirical nominal center for each location from the four official trials. These published repeatability values therefore do not share the same nominal reference definition.",
+      "aruco_published_marker_center": {
+        "mean_distance_px": 2.362,
+        "max_distance_px": 5.805
+      },
+      "yolo_published_bbox_center": {
+        "mean_distance_px": 1.485,
+        "max_distance_px": 5.026
+      },
+      "yolo_published_upper_quarter_grasp_point": {
+        "mean_distance_px": 1.503,
+        "max_distance_px": 5.057
+      }
+    },
+    "harmonized_empirical_nominal_metrics": {
+      "common_nominal_definition": "Per-location arithmetic mean of the four official trial coordinates for each method and coordinate type.",
+      "aruco_marker_center": {
+        "metric": "ArUco marker center",
+        "nominal_definition": "Per-location arithmetic mean of the four official trial coordinates.",
+        "distance_definition": "Euclidean pixel distance from the empirical per-location nominal center.",
+        "overall_mean_distance_px": 1.269,
+        "overall_max_distance_px": 3.973,
+        "per_location": {
+          "L1_lower_left": {
+            "nominal_center_px": [
+              250.75,
+              271.812
+            ],
+            "mean_distance_px": 1.314,
+            "max_distance_px": 1.512
+          },
+          "L2_upper_left": {
+            "nominal_center_px": [
+              236.75,
+              134.438
+            ],
+            "mean_distance_px": 0.355,
+            "max_distance_px": 0.504
+          },
+          "L3_center": {
+            "nominal_center_px": [
+              321.812,
+              194.188
+            ],
+            "mean_distance_px": 0.774,
+            "max_distance_px": 1.266
+          },
+          "L4_upper_right": {
+            "nominal_center_px": [
+              427.5,
+              134.938
+            ],
+            "mean_distance_px": 2.011,
+            "max_distance_px": 3.973
+          },
+          "L5_lower_right": {
+            "nominal_center_px": [
+              411.812,
+              290.125
+            ],
+            "mean_distance_px": 1.892,
+            "max_distance_px": 3.065
+          }
+        }
+      },
+      "yolo_bbox_center": {
+        "metric": "YOLO bbox center",
+        "nominal_definition": "Per-location arithmetic mean of the four official trial coordinates.",
+        "distance_definition": "Euclidean pixel distance from the empirical per-location nominal center.",
+        "overall_mean_distance_px": 1.485,
+        "overall_max_distance_px": 5.026,
+        "per_location": {
+          "L1_lower_left": {
+            "nominal_center_px": [
+              253.952,
+              299.728
+            ],
+            "mean_distance_px": 3.963,
+            "max_distance_px": 5.026
+          },
+          "L2_upper_left": {
+            "nominal_center_px": [
+              238.221,
+              162.25
+            ],
+            "mean_distance_px": 0.788,
+            "max_distance_px": 0.923
+          },
+          "L3_center": {
+            "nominal_center_px": [
+              323.857,
+              220.517
+            ],
+            "mean_distance_px": 1.048,
+            "max_distance_px": 1.517
+          },
+          "L4_upper_right": {
+            "nominal_center_px": [
+              430.393,
+              163.691
+            ],
+            "mean_distance_px": 0.792,
+            "max_distance_px": 1.519
+          },
+          "L5_lower_right": {
+            "nominal_center_px": [
+              408.2,
+              316.289
+            ],
+            "mean_distance_px": 0.834,
+            "max_distance_px": 1.544
+          }
+        }
+      },
+      "yolo_upper_quarter_grasp_point": {
+        "metric": "YOLO upper-quarter grasp point",
+        "nominal_definition": "Per-location arithmetic mean of the four official trial coordinates.",
+        "distance_definition": "Euclidean pixel distance from the empirical per-location nominal center.",
+        "overall_mean_distance_px": 1.503,
+        "overall_max_distance_px": 5.057,
+        "per_location": {
+          "L1_lower_left": {
+            "nominal_center_px": [
+              253.952,
+              266.849
+            ],
+            "mean_distance_px": 3.998,
+            "max_distance_px": 5.057
+          },
+          "L2_upper_left": {
+            "nominal_center_px": [
+              238.221,
+              133.613
+            ],
+            "mean_distance_px": 0.824,
+            "max_distance_px": 0.914
+          },
+          "L3_center": {
+            "nominal_center_px": [
+              323.857,
+              190.043
+            ],
+            "mean_distance_px": 1.094,
+            "max_distance_px": 1.634
+          },
+          "L4_upper_right": {
+            "nominal_center_px": [
+              430.393,
+              135.684
+            ],
+            "mean_distance_px": 0.778,
+            "max_distance_px": 1.522
+          },
+          "L5_lower_right": {
+            "nominal_center_px": [
+              408.2,
+              282.416
+            ],
+            "mean_distance_px": 0.82,
+            "max_distance_px": 1.544
+          }
+        }
+      },
+      "descriptive_differences": {
+        "yolo_bbox_minus_aruco_mean_distance_px": 0.216,
+        "yolo_bbox_minus_aruco_max_distance_px": 1.053,
+        "yolo_grasp_minus_aruco_mean_distance_px": 0.234,
+        "yolo_grasp_minus_aruco_max_distance_px": 1.084
+      },
+      "interpretation_limit": "These are descriptive results from four controlled trials per location and are not evidence of general statistical superiority."
+    }
+  },
+  "yolo_held_out_perception_test": {
+    "label": "HELD-OUT PERCEPTION TEST performance",
+    "separate_from_robotic_benchmark": true,
+    "ground_truth_cube_instances": 15,
+    "ground_truth_cubes_detected": 15,
+    "precision": 0.916,
+    "recall": 1.0,
+    "mAP50": 0.987,
+    "mAP50_95": 0.885,
+    "extra_background_false_positive_detections": 2,
+    "false_negatives": 0,
+    "approximate_cpu_processing_time_ms_per_image": 68.2
+  },
+  "qualitative_engineering_comparison": [
+    {
+      "dimension": "Localization approach",
+      "ArUco": "Deterministic fiducial-marker localization",
+      "YOLO": "Learned appearance-based cube detection"
+    },
+    {
+      "dimension": "Visible marker required",
+      "ArUco": "Yes",
+      "YOLO": "No for the tested cube detector"
+    },
+    {
+      "dimension": "Detector training required",
+      "ArUco": "No learned detector training",
+      "YOLO": "Yes; labeled data and model training"
+    },
+    {
+      "dimension": "Object preparation",
+      "ArUco": "Marker installation and visibility required",
+      "YOLO": "No marker installation for the tested cube"
+    },
+    {
+      "dimension": "Extension to new object classes",
+      "ArUco": "Requires an appropriate visible fiducial target",
+      "YOLO": "Potentially possible with new labeled data, training, and validation; not established by this benchmark"
+    }
+  ],
+  "paper_ready_comparison_table": [
+    {
+      "metric": "Official controlled trials",
+      "ArUco": "20 (5 locations x 4 trials)",
+      "YOLO": "20 (5 locations x 4 trials)"
+    },
+    {
+      "metric": "Harmonized full-cycle success",
+      "ArUco": "20/20 (100.00%)",
+      "YOLO": "20/20 (100.00%)"
+    },
+    {
+      "metric": "Mean cycle time",
+      "ArUco": "133.489 s",
+      "YOLO": "133.392 s"
+    },
+    {
+      "metric": "Median cycle time",
+      "ArUco": "133.276 s",
+      "YOLO": "133.170 s"
+    },
+    {
+      "metric": "Cycle-time sample SD",
+      "ArUco": "0.752 s",
+      "YOLO": "0.623 s"
+    },
+    {
+      "metric": "Minimum cycle time",
+      "ArUco": "132.599 s",
+      "YOLO": "132.722 s"
+    },
+    {
+      "metric": "Maximum cycle time",
+      "ArUco": "135.402 s",
+      "YOLO": "134.551 s"
+    },
+    {
+      "metric": "Localization approach",
+      "ArUco": "Deterministic fiducial-marker center",
+      "YOLO": "Learned bbox detection plus upper-quarter grasp point"
+    },
+    {
+      "metric": "Marker required",
+      "ArUco": "Yes",
+      "YOLO": "No for the tested cube"
+    },
+    {
+      "metric": "Detector training required",
+      "ArUco": "No",
+      "YOLO": "Yes"
+    }
+  ],
+  "interpretation": {
+    "controlled_success_scope": "Both methods achieved 100% observed full-cycle success in their respective 20 controlled benchmark trials. This is not a universal 100% success claim.",
+    "cycle_time_context": "Cycle-time similarity is expected because both systems share much of the same downstream mapping and robot-control pipeline.",
+    "generalization_limit": "The benchmark does not establish untested robustness or generalization to other objects, environments, or operating conditions."
+  }
+}

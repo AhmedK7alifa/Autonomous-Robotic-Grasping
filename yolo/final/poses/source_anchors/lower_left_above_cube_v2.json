@@ -1,0 +1,15 @@
+{
+    "pose_name": "lower_left_above_cube_v2",
+    "timestamp": "2026-08-15T20:35:52",
+    "robot_type": "SO101Follower",
+    "robot_id": "white_follower",
+    "port": "COM5",
+    "positions": {
+        "shoulder_pan.pos": 49.86,
+        "shoulder_lift.pos": 52.73,
+        "elbow_flex.pos": -56.55,
+        "wrist_flex.pos": 44.28,
+        "wrist_roll.pos": -77.13,
+        "gripper.pos": 76.02
+    }
+}

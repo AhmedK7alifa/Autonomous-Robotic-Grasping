@@ -1,0 +1,85 @@
+{
+  "camera": "Logitech C920 Pro",
+  "resolution": [
+    1280,
+    720
+  ],
+  "board": {
+    "dictionary": "DICT_4X4_50",
+    "squares_x": 5,
+    "squares_y": 7,
+    "square_length_m": 0.03,
+    "marker_length_m": 0.022
+  },
+  "images_found": 20,
+  "images_used": 20,
+  "used_files": [
+    "charuco_01.jpg",
+    "charuco_02.jpg",
+    "charuco_03.jpg",
+    "charuco_04.jpg",
+    "charuco_05.jpg",
+    "charuco_06.jpg",
+    "charuco_07.jpg",
+    "charuco_08.jpg",
+    "charuco_09.jpg",
+    "charuco_10.jpg",
+    "charuco_11.jpg",
+    "charuco_12.jpg",
+    "charuco_13.jpg",
+    "charuco_14.jpg",
+    "charuco_15.jpg",
+    "charuco_16.jpg",
+    "charuco_17.jpg",
+    "charuco_18.jpg",
+    "charuco_19.jpg",
+    "charuco_20.jpg"
+  ],
+  "rms_reprojection_error_px": 0.6122209679316789,
+  "camera_matrix": [
+    [
+      1046.5951307226137,
+      0.0,
+      688.5221415422395
+    ],
+    [
+      0.0,
+      1058.4320389498164,
+      273.4054778660652
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "distortion_coefficients": [
+    0.07509298237048014,
+    -0.0103293937054567,
+    -0.044016387036955665,
+    0.010720805743176865,
+    -0.21410304273625938
+  ],
+  "per_view_rmse_px": {
+    "charuco_01.jpg": 0.7252535223960876,
+    "charuco_02.jpg": 0.7025273442268372,
+    "charuco_03.jpg": 0.6688876748085022,
+    "charuco_04.jpg": 0.708597719669342,
+    "charuco_05.jpg": 0.5664100050926208,
+    "charuco_06.jpg": 0.7905399799346924,
+    "charuco_07.jpg": 0.7996675372123718,
+    "charuco_08.jpg": 0.28430262207984924,
+    "charuco_09.jpg": 0.39669862389564514,
+    "charuco_10.jpg": 0.9074793457984924,
+    "charuco_11.jpg": 0.7460578083992004,
+    "charuco_12.jpg": 0.4461681842803955,
+    "charuco_13.jpg": 0.7288578152656555,
+    "charuco_14.jpg": 0.6292216777801514,
+    "charuco_15.jpg": 0.6364731192588806,
+    "charuco_16.jpg": 0.25861477851867676,
+    "charuco_17.jpg": 0.2566128373146057,
+    "charuco_18.jpg": 0.32945385575294495,
+    "charuco_19.jpg": 0.6099603772163391,
+    "charuco_20.jpg": 0.43399715423583984
+  }
+}
