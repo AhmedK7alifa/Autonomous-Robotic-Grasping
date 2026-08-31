@@ -2,7 +2,7 @@
 
 ## A controlled comparison of marker-based ArUco and learning-based YOLO perception for pick-and-place
 
-**Author:** AHMED KHALIFA IDRISS ELHAJ
+**Author:** AHMED KHALIFA IDRISS ELHAJ （叶鹏）
 
 **Affiliation:** College of Computer Science, Chengdu Normal University, Chengdu, Sichuan, China
 
