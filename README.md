@@ -6,6 +6,12 @@
 
 **Affiliation:** College of Computer Science, Chengdu Normal University, Chengdu, Sichuan, China
 
+## Demo Video
+
+A short physical demonstration of the ArUco and YOLO autonomous robotic grasping pipelines is available on Bilibili:
+
+**Bilibili Demo:** https://www.bilibili.com/video/BV13Xtg6REZJ/
+
 This repository contains the publication-safe perception, calibration, mapping, detector-training metadata, evaluation, dry-run/reference, benchmark-record, analysis, and visualization artifacts for a controlled physical comparison of:
 
 - ArUco marker-based cube pick-and-place; and
