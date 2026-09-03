@@ -1,0 +1,31 @@
+locations:
+  location_01:
+    banner: "FINAL ARUCO BENCHMARK V3 - LOCATION 1 - LOWER LEFT"
+    output_directory: location_1_lower_left
+    mode: final_aruco_benchmark_v3_location_1
+    benchmark_location: L1_lower_left
+    nominal_center_px: [247.8, 271.0]
+  location_02:
+    banner: "FINAL ARUCO BENCHMARK V3 - LOCATION 2 - UPPER LEFT"
+    output_directory: location_2_upper_left
+    mode: final_aruco_benchmark_v3_location_2
+    benchmark_location: L2_upper_left
+    nominal_center_px: [237.0, 134.5]
+  location_03:
+    banner: "FINAL ARUCO BENCHMARK V3 - LOCATION 3 - CENTER"
+    output_directory: location_3_center
+    mode: final_aruco_benchmark_v3_location_3
+    benchmark_location: L3_center
+    nominal_center_px: [326.2, 195.5]
+  location_04:
+    banner: "FINAL ARUCO BENCHMARK V3 - LOCATION 4 - UPPER RIGHT"
+    output_directory: location_4_upper_right
+    mode: final_aruco_benchmark_v3_location_4
+    benchmark_location: L4_upper_right
+    nominal_center_px: [428.2, 134.5]
+  location_05:
+    banner: "FINAL ARUCO BENCHMARK V3 - LOCATION 5 - LOWER RIGHT"
+    output_directory: location_5_lower_right
+    mode: final_aruco_benchmark_v3_location_5
+    benchmark_location: L5_lower_right
+    nominal_center_px: [411.2, 290.8]

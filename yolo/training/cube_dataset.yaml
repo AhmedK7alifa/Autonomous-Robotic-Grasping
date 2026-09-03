@@ -1,4 +1,4 @@
-path: D:/Projects/Autonomous_Robotic_Grasping/06_yolo/dataset
+path: ../../data/yolo
 train: images/train
 val: images/val
 test: images/test

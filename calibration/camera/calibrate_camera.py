@@ -9,8 +9,8 @@ import numpy as np
 # Paths
 # --------------------------------------------------
 ROOT = Path(__file__).resolve().parent
-IMAGE_DIR = ROOT / "charuco_images"
-OUTPUT_DIR = ROOT / "camera_intrinsics"
+IMAGE_DIR = ROOT / "images"
+OUTPUT_DIR = ROOT / "generated"
 
 OUTPUT_DIR.mkdir(exist_ok=True)
 

@@ -1,12 +1,12 @@
 cff-version: 1.2.0
-message: "If you use this software or its benchmark artifacts, please cite the associated forthcoming preprint and this repository."
+message: "If you use this software, dataset, or benchmark records, please cite this repository and the associated paper when available."
 title: "Autonomous Robotic Grasping: A Controlled Comparison of Marker-Based ArUco and Learning-Based YOLO Perception for Pick-and-Place"
 type: software
 authors:
-  - given-names: "Ahmed Khalifa Idriss"
-    family-names: "Elhaj"
+  - given-names: "AHMED KHALIFA IDRISS"
+    family-names: "ELHAJ"
     affiliation: "College of Computer Science, Chengdu Normal University, Chengdu, Sichuan, China"
-abstract: "Publication-safe software and benchmark artifacts for a controlled physical comparison of ArUco marker localization and YOLO cube detection in robotic pick-and-place."
+abstract: "Software, calibration, dataset, trained model, robotic benchmark records, and analysis for a controlled physical comparison of ArUco marker localization and YOLO cube detection in pick-and-place."
 keywords:
   - robotic grasping
   - pick-and-place

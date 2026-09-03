@@ -1,44 +1,43 @@
 # Experimental setup
 
-## Physical system
+## Hardware
 
-| Item | Frozen configuration |
-|---|---|
-| Robot | Hiwonder SO-ARM101 follower |
-| Robot role | Follower arm |
-| Camera | Logitech C920 Pro HD Webcam |
-| Camera geometry | Fixed eye-to-hand |
-| Image stream | 1280 × 720 at 30 FPS |
-| Object | 5 cm wooden cube |
-| Workspace | Fixed calibrated region on a gray work mat |
-| Destination | Fixed platform/box |
+- Hiwonder SO-ARM101 follower robot
+- Logitech C920 Pro HD Webcam in a fixed eye-to-hand arrangement
+- 5 cm wooden cube
+- Fixed open placement platform
+- Windows workstation running the LeRobot SO-101 follower interface
 
-The robot base, camera mount, pick region, and destination remained fixed across the controlled comparison. Camera or base motion after calibration invalidates the pixel-to-joint mapping.
+The physical camera and mounting position were unchanged between methods.
+Windows/OpenCV enumerated the camera as index 1 during the ArUco benchmark and
+as DirectShow index 0 during the later YOLO benchmark. Both pipelines requested
+1280 × 720 at 30 FPS and undistorted the full frame without cropping, resizing,
+flipping, or rotation.
 
-## Camera enumeration
+## Camera calibration
 
-The earlier ArUco controllers record OpenCV camera index 1. During YOLO development, Windows device enumeration changed and the same physical camera was verified at DirectShow index 0. The camera hardware and mounting geometry did not change. Camera indices are host-specific and must never be assumed on another machine.
+Intrinsic calibration used a 5 × 7 ChArUco board with 30 mm squares and 22 mm
+markers. All 20 recorded calibration images were accepted. The saved result
+reports an RMS reprojection error of 0.6122 px.
 
-## Intrinsic calibration
+The calibration inputs, script, human-readable result, and runtime NPZ are in
+`calibration/camera`. Re-running `calibrate_camera.py` writes to
+`calibration/camera/generated` so the experimental files are not overwritten.
 
-The Logitech camera was calibrated with a 5 × 7 ChArUco board using DICT_4X4_50, 30 mm squares, and 22 mm board markers. All 20 captured calibration images were accepted. The RMS reprojection error was 0.6122209679 px.
+## Robot calibration and poses
 
-Both final pipelines use the saved camera matrix and distortion coefficients to remap the full 1280 × 720 frame. No crop, resize, flip, or rotation is applied before localization.
+`calibration/robot/white_follower_calibration_final_2026-07-26.json` records the
+servo calibration for the physical SO-ARM101 unit used in the experiment.
+Shared waypoint and source-anchor poses are stored under `robot_control/poses`.
 
-## ArUco condition
+The fixed waypoints are safe rest, box-high clearance, and box-low release. The
+sixteen source-anchor pose files provide above and grasp poses for eight image
+locations. Pose values are stored in the LeRobot joint-coordinate convention
+used by the controllers.
 
-The cube carried a visible 40 mm ArUco marker with ID 0 from DICT_4X4_50. The image-space handoff was the stable marker center.
+## Workspace
 
-## YOLO condition
-
-The same 5 cm wooden cube was used without a visible fiducial marker. A single-class yolo26n model detected the cube. Duplicate, highly overlapping detections were suppressed before the temporal stability test. The frozen upper-quarter grasp reference was derived from median bounding-box geometry.
-
-## Shared downstream system
-
-Both methods handed an image coordinate to the same Day-7 9-point, 8-triangle piecewise barycentric mapping basis. The physical benchmark then used the same downstream system for both perception methods. The experiment did not measure gripping force, torque, or motor current.
-
-## Public safety boundary
-
-This public repository does not distribute executable robot-actuation controllers or instructions for direct physical robot motion. The physical benchmark used internal, hardware-specific controllers that remain archived outside the public release; their provenance and exclusion status are recorded in `SOURCE_FILE_MAP.tsv` and `PUBLIC_REPOSITORY_REVIEW.md`.
-
-The included poses and calibration records are research artifacts from one experimental unit and geometry. They are not operating instructions and must not be treated as transferable robot commands. Physical robot operation is outside the scope of this repository and requires the robot manufacturer’s documentation, qualified supervision, and an institutionally approved safety process.
+The cube was placed at five benchmark locations spanning lower-left,
+upper-left, center, upper-right, and lower-right workspace regions. Blue tape
+marked the source region. The fixed open placement platform remained to the
+right of the source region throughout both benchmarks.

@@ -1,13 +1,26 @@
-# ArUco marker-based pipeline
+# ArUco controller
 
-The official ArUco condition used marker ID 0, DICT_4X4_50, a 40 mm marker, calibrated 1280 × 720 images, and a temporally stable marker-center reference.
+`controller.py` is the portable full-cycle entry point:
 
-## Public safety boundary
+```bash
+python aruco/controller.py --location 1
+```
 
-The five executable FINAL ArUco V3 hardware controllers used in the physical benchmark are preserved only in the read-only authoritative experimental archive. They are intentionally not distributed in this public repository because their primary purpose is direct robot actuation.
+`locations.yaml` contains only the five output/record metadata sets. Perception,
+mapping, source-anchor correction, right-corridor behavior, motion constants,
+contact detection, retention, placement, and release logic remain common.
 
-Their historical filenames, source locations, hashes, and former public-copy paths remain documented in [../SOURCE_FILE_MAP.tsv](../SOURCE_FILE_MAP.tsv) with status removed_public_safety_boundary. The physical benchmark results, all 20 official trial records, and the frozen analyzer remain public in [../results/aruco](../results/aruco).
+The exact files used for the official benchmark are in
+`benchmark_controllers`. They retain their original source bytes under shorter
+filesystem names:
 
-## Official result
+| File | SHA-256 |
+|---|---|
+| `location_01.py` | `209cbe4b0def1eb2b569475dc3f9e3a4aad81bd7bc56617a1f9f056c607966ac` |
+| `location_02.py` | `582b178f6ebd8d8e7354afc59c7dac27d7fdbcbfa8292ceddcf2165baa010710` |
+| `location_03.py` | `8ecf4588939e655d8cf99534e39ec4d0af2f63b25edafe459b1085b9026b1358` |
+| `location_04.py` | `462d99a1727aefd7aba4604c69030edefc90ffbe10dce6c0c5bc29d3d750c4a4` |
+| `location_05.py` | `92a942b2a12c6d6c40f4cf34d1c0e38fa1cb75aa8af6bccd478d4adc6aa4d3b6` |
 
-ArUco achieved 20/20 observed successful full cycles under the controlled benchmark conditions. Mean cycle time was 133.489 s. Harmonized marker-center repeatability distance was 1.269 px, with a 3.973 px maximum.
+Run `python aruco/verify_equivalence.py` for static hash, function-AST,
+constant, and metadata checks against these five benchmark controller files.

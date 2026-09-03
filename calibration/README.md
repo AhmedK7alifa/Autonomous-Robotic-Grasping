@@ -1,7 +1,8 @@
 # Calibration
 
-The [camera](camera) directory contains the publication-safe camera calibration program, undistortion test, and frozen calibration artifacts. Raw ChArUco capture images are excluded to keep the repository compact.
+`camera` contains the 20 ChArUco input images, calibration program,
+undistortion check, and saved JSON/NPZ results for the Logitech C920 Pro.
+Reconstructed outputs are written to `camera/generated`.
 
-Calibration used 20 accepted images out of 20 found and produced an RMS reprojection error of 0.6122 px at 1280 × 720. The camera was fixed eye-to-hand. Any motion of the camera or robot base invalidates the saved pixel-to-joint mapping.
-
-The robot’s per-unit servo calibration file is not distributed because it should not be applied to another physical unit. Reproduction requires a fresh device-specific calibration using the supported LeRobot/Hiwonder procedure.
+`robot` contains the servo calibration for the SO-ARM101 follower used in the
+experiment. These values correspond to that physical robot unit.

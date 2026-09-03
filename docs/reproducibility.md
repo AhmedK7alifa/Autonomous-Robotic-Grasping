@@ -1,77 +1,79 @@
 # Reproducibility
 
-## Reproducibility level
+## Environment
 
-This repository supports artifact inspection, hash verification, trial-level result auditing, and regeneration of method summaries. It does not provide physical robot reproduction or detector retraining: robot-actuation controllers and operating instructions are excluded for public safety, hardware calibration is unit-specific, and the raw YOLO images/labels are excluded.
+The experiment used Python 3.10.18. Create the recorded direct dependency
+environment with either:
 
-## Original software environment
+```bash
+conda env create -f environment.yml
+conda activate autonomous-robotic-grasping
+```
 
-The experiment was Windows-based. The preserved records report:
+or install `requirements.txt` in a Python 3.10 environment. The recorded
+LeRobot package version is 0.3.4; the exact commit of the original editable
+checkout was not recorded.
 
-| Package/runtime | Recorded version |
-|---|---|
-| Python | 3.10.18 |
-| OpenCV | 5.0.0, package opencv-contrib-python 5.0.0.93 |
-| NumPy | 2.2.6 |
-| PyTorch | 2.7.1+cpu |
-| TorchVision | 0.22.1 |
-| Ultralytics | 8.4.121 |
-| LeRobot | 0.3.4 reported by environment export |
-| Feetech servo SDK | 1.0.0 |
+## Analysis
 
-The original LeRobot installation was an editable local checkout. Its exact Git commit was not recorded, so package-version recreation is approximate. requirements.txt and environment.yml intentionally contain only documented direct dependencies rather than an invented full lockfile.
+The analysis scripts are read-only:
 
-## Environment creation
+```bash
+python analysis/analyze_aruco.py
+python analysis/analyze_yolo.py
+python analysis/compare_methods.py
+```
 
-From an Anaconda/Miniforge shell on Windows:
+Each command validates the official record count and metadata, recomputes the
+statistics, and checks them against committed outputs.
 
-    conda env create -f environment.yml
-    conda activate autonomous-robotic-grasping
+## Mapping and calibration
 
-Or, from an existing Python 3.10 environment:
+The mapping inputs used in the experiment are `mapping/calibration_points.json`
+and `mapping/pixel_to_joint_model.json`. To rebuild without replacing the experimental
+model:
 
-    python -m pip install -r requirements.txt
+```bash
+python mapping/build_mapping.py
+```
 
-Dependency installation alone does not configure the robot, camera, serial access, or safety system.
+Generated files are written under `mapping/generated`. The camera calibration
+script similarly writes reconstructed output under
+`calibration/camera/generated`.
 
-## Verify frozen artifacts
+`mapping/validate_mapping.py` is an interactive camera validation program and
+does not command the robot.
 
-The original YOLO freeze manifest includes SHA-256 values for the archived experimental inputs, including the checkpoint, mapping, calibration, poses, support modules, and an internal controller that is not part of this public release. For example, the included checkpoint can be verified in PowerShell:
+## Dataset and model
 
-    Get-FileHash yolo\final\model\best.pt -Algorithm SHA256
+`data/yolo` contains 90 training, 15 validation, and 15 test image/label pairs.
+`yolo/training/cube_dataset.yaml` points to this repository-relative dataset.
+The split manifest records the dataset membership and hashes. Training
+configuration, epoch metrics, and selected plots are stored beside it.
 
-Expected checkpoint SHA-256:
+The inference weights are `yolo/model/best.pt`, SHA-256
+`32c32fcef42b92a5ed3fd37f0023281251fbe50d94342af65ad6614592bff7c6`.
+The original training command was not retained. The saved training
+configuration is available in `args.yaml`.
 
-    32C32FCEF42B92A5ED3FD37F0023281251FBE50D94342AF65AD6614592BFF7C6
+## Controller entry points
 
-The final public review records source-to-public hash equality for every included copied artifact and separately records safety-withheld controller paths.
+Static equivalence checks:
 
-## Regenerate method summaries
+```bash
+python aruco/verify_equivalence.py
+python yolo/verify_equivalence.py
+```
 
-The 40 official trial JSON files are included. The YOLO method analyzer resolves data relative to its own file. The ArUco analyzer instead expects 06_pixel_to_robot/aruco_final_benchmark_v3 beneath the process working directory. Run analyzers only in a disposable staging tree because they overwrite summary TXT/JSON/CSV files.
+Physical controller entry points:
 
-For an ArUco audit, copy results/aruco into a temporary staging directory named 06_pixel_to_robot, change the process working directory to the staging root, and run 06_pixel_to_robot/analyze_final_aruco_benchmark.py. For YOLO, copy results/yolo into a temporary 06_yolo directory and run 06_yolo/11_analyze_final_yolo_benchmark.py.
+```bash
+python aruco/controller.py --location 1
+python yolo/controller.py
+```
 
-The frozen comparison script also expects the original numbered experimental topology, not this publication layout. It is preserved unchanged in results/comparison for provenance. To regenerate the comparison, populate the expected 06_pixel_to_robot and 06_yolo summary paths plus 07_comparison in the same disposable staging tree. Record the staging procedure and verify the regenerated metrics against the committed comparison files.
-
-## Public safety boundary
-
-The five ArUco benchmark controllers, the YOLO full pick-and-place candidate, and a duplicated controller in the YOLO reference snapshot are retained only in the read-only authoritative research archive. They are deliberately absent from this public repository. `SOURCE_FILE_MAP.tsv` preserves their source and former publication paths with status `removed_public_safety_boundary`, so the provenance record remains auditable without distributing executable actuation code.
-
-The included dry-run scripts stop at perception, coordinate mapping, validation, or plan description and do not connect to or command a robot. This release cannot be used to actuate the experimental robot and provides no robot-enable or physical-motion procedure.
-
-## Camera and mapping reproduction
-
-Raw ChArUco images are excluded, but the calibration script, calibration JSON/NPZ, board definition, accepted-image count, and reprojection error are preserved. A changed camera or mount requires new images and a new calibration.
-
-The mapping directory contains the frozen 9-point model and archived 9-point observation record. These research records are hardware-specific and are not distributed as transferable robot commands. The archived benchmark disabled extrapolation outside its validated triangle mesh.
-
-## YOLO training and test reproduction
-
-The repository includes capture/annotation utilities, deterministic split manifest, original dataset YAML, saved training arguments, epoch history, and best.pt. The raw 120 images and labels are excluded, so training and held-out evaluation cannot be independently repeated from this repository alone.
-
-No standalone one-off held-out-test runner/output directory was found. The official detector metrics are preserved in the final comparison output. This is a provenance gap, not a reason to infer or reconstruct undocumented commands.
-
-## Expected boundaries
-
-A reproducible audit should recover the committed summary values from the included trial records. A physical rerun may differ because of hardware tolerances, calibration, lighting, object placement, software/hardware revisions, and operator procedures. The repository makes no claim of zero-shot performance, unseen-object generalization, universal reliability, or statistical method superiority.
+The portable ArUco entry point differs from the five benchmark controller files
+only in repository-relative paths and location metadata. The portable YOLO
+controller uses the benchmark controller functions and resolves its support
+chain from the repository. New records are written under
+`benchmarks/<method>/new_trials`, separate from the official data.
