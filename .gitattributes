@@ -1,20 +1,25 @@
-# Auto detect text files and perform LF normalization
+# Normalize maintained text files while preserving frozen experiment artifacts.
 * text=auto
 
-# Keep the official GNU license text byte-for-byte as downloaded.
+*.jpg -text
+*.png -text
+*.npz -text
+*.pt -text
 LICENSE -text
 
-# Preserve byte-identical experimental artifacts in Git.
-aruco/final/** -text
-yolo/final/** -text
-yolo/training/** -text
-yolo/evaluation/** -text
-calibration/camera/** -text
-mapping/final/** -text
-results/aruco/** -text
-results/yolo/** -text
-results/comparison/*.py -text
+aruco/benchmark_controllers/*.py -text
+yolo/benchmark_controller.py -text
+mapping/calibration_points.json -text
+mapping/pixel_to_joint_model.json -text
+calibration/camera/camera_calibration.json -text
+calibration/robot/*.json -text
+robot_control/poses/**/*.json -text
+benchmarks/**/*.json -text
+benchmarks/**/*.csv -text
+benchmarks/**/*.txt -text
 results/comparison/*.json -text
 results/comparison/*.csv -text
 results/comparison/*.txt -text
-results/figures/*.jpg -text
+yolo/training/args.yaml -text
+yolo/training/results.csv -text
+yolo/training/split_manifest.json -text

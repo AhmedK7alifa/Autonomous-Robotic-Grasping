@@ -8,19 +8,18 @@ ROOT = Path(__file__).resolve().parent
 
 CALIBRATION_FILE = (
     ROOT
-    / "camera_intrinsics"
     / "camera_calibration.npz"
 )
 
 IMAGE_FILE = (
     ROOT
-    / "charuco_images"
+    / "images"
     / "charuco_20.jpg"
 )
 
 OUTPUT_FILE = (
     ROOT
-    / "camera_intrinsics"
+    / "generated"
     / "undistortion_test.jpg"
 )
 
@@ -103,6 +102,8 @@ comparison = np.hstack(
 
 
 # Save the full-resolution comparison
+OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
+
 cv2.imwrite(
     str(OUTPUT_FILE),
     comparison,

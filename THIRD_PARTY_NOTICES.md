@@ -12,11 +12,11 @@ Ultralytics documents YOLO26 code, models, and documentation as available under 
 - Ultralytics repository: https://github.com/ultralytics/ultralytics
 - Ultralytics licensing information: https://www.ultralytics.com/license
 
-This public repository adopts **AGPL-3.0-only**. The unmodified GNU AGPLv3 license text is included in [LICENSE](LICENSE).
+This repository is licensed under **AGPL-3.0-only**. The unmodified GNU AGPLv3 license text is included in [LICENSE](LICENSE).
 
 ## Project-specific checkpoint
 
-[yolo/final/model/best.pt](yolo/final/model/best.pt) is the project-specific trained YOLO26 checkpoint produced for the controlled wooden-cube detector. Its inclusion does not transfer or imply ownership of the YOLO26 architecture, Ultralytics framework, or pretrained-model lineage.
+[yolo/model/best.pt](yolo/model/best.pt) is the project-specific trained YOLO26 checkpoint produced for the controlled wooden-cube detector. Its inclusion does not transfer or imply ownership of the YOLO26 architecture, Ultralytics framework, or pretrained-model lineage.
 
 ## Other dependencies
 
